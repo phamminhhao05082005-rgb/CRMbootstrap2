@@ -1,0 +1,3177 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Components Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="topbar1.css">
+    <link rel="stylesheet" href="sidebar1.css">
+    <link rel="stylesheet" href="dropdown1.css">
+    <link rel="stylesheet" href="dropdown2.css">
+    <link rel="stylesheet" href="popover1.css">
+    <link rel="stylesheet" href="card1.css">
+    <link rel="stylesheet" href="offcanvas1.css">
+    <link rel="stylesheet" href="offcanvas2.css">
+    <link rel="stylesheet" href="testcss.css">
+
+    <style>
+        body {
+            height: auto !important;
+            overflow-y: auto !important;
+            background-color: #f8fafc !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar custom-sidebar p-3 border-end">
+                <div class="brand-header d-flex align-items-center gap-2 pb-3 mb-3 border-bottom">
+                    <div class="brand-icon rounded-3 d-flex align-items-center justify-content-center text-white">
+                        <i class="bi bi-grid-1x2-fill fs-5"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-0 text-dark" style="font-size: 1.05rem;">CRM Library</h5>
+                        <span class="text-secondary small fw-medium" style="font-size: 0.75rem;">CRM UI Components</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-heading px-2 mb-2 text-uppercase text-muted fw-bold" style="font-size: 0.72rem; letter-spacing: 0.5px;">DANH SÁCH COMPONENTS</div>
+
+                <div class="nav flex-column nav-pills custom-sidebar-nav" id="componentTabs" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active d-flex align-items-center justify-content-between mb-1"
+                        id="tab-topbar-btn" data-bs-toggle="pill" data-bs-target="#tab-topbar" type="button"
+                        role="tab" aria-controls="tab-topbar" aria-selected="true">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-layout-text-window-reverse" style="color: #3b82f6;"></i>
+                            <span>Topbar</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-sidebar-btn" data-bs-toggle="pill" data-bs-target="#tab-sidebar" type="button"
+                        role="tab" aria-controls="tab-sidebar" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-layout-sidebar" style="color: #8b5cf6;"></i>
+                            <span>Sidebar</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-dropdowns-btn" data-bs-toggle="pill" data-bs-target="#tab-dropdowns" type="button"
+                        role="tab" aria-controls="tab-dropdowns" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-menu-button-wide-fill" style="color: #ec4899;"></i>
+                            <span>Dropdowns</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-popovers-btn" data-bs-toggle="pill" data-bs-target="#tab-popovers" type="button"
+                        role="tab" aria-controls="tab-popovers" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-chat-square-text-fill" style="color: #8b5cf6;"></i>
+                            <span>Popovers</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-cards-btn" data-bs-toggle="pill" data-bs-target="#tab-cards" type="button"
+                        role="tab" aria-controls="tab-cards" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-card-heading" style="color: #f59e0b;"></i>
+                            <span>Cards</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-offcanvas-btn" data-bs-toggle="pill" data-bs-target="#tab-offcanvas" type="button"
+                        role="tab" aria-controls="tab-offcanvas" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-layout-sidebar-reverse" style="color: #10b981;"></i>
+                            <span>Offcanvas</span>
+                        </span>
+                    </button>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 main-content">
+                <div class="tab-content" id="componentTabsContent">
+
+                    <div class="tab-pane fade show active" id="tab-topbar" role="tabpanel" aria-labelledby="tab-topbar-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">1. Topbar Components</h1>
+                                <p class="text-muted mb-0 small">Thanh điều hướng trên cùng (Top Navigation Bar) tích hợp logo, chọn tài khoản, ô tìm kiếm và menu người dùng</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#topbar-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Analytics Topbar</a>
+                            </div>
+                        </div>
+
+                        <section id="topbar-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Topbar Navigation (Thanh điều hướng phân tích Analytics)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-search me-1"></i> Analytics Navigation Bar
+                                    </span>
+                                </div>
+                                <div class="p-0 preview-container" id="preview-topbar1" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+                                    <header class="topbar-container">
+    <div class="topbar-left">
+        <a href="#" class="brand-link">
+            <div class="analytics-logo">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+            </div>
+            <span class="brand-name">Analytics</span>
+        </a>
+        
+        <div class="divider"></div>
+        
+        <div class="account-selector cursor-pointer">
+            <div class="account-breadcrumb">
+                Tất cả tài khoản <i class="bi bi-chevron-right"></i> Minh Hào
+            </div>
+            <div class="account-current">
+                Minh Hào <i class="bi bi-caret-down-fill ms-1" style="font-size: 10px;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="topbar-center">
+        <div class="search-box">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Thử tìm kiếm &quot;cách thiết lập Analytics&quot;">
+        </div>
+    </div>
+
+    <div class="topbar-right">
+        <button class="icon-btn" type="button">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+        </button>
+
+        <button class="icon-btn" type="button">
+            <i class="bi bi-question-circle-fill"></i>
+        </button>
+
+        <button class="avatar-btn" type="button">
+            <div class="avatar purple-avatar">P</div>
+        </button>
+    </div>
+</header>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-topbar1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-topbar1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Topbar 1 --&gt;
+&lt;link rel="stylesheet" href="topbar1.css"&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-topbar1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-topbar1">&lt;header class=&quot;topbar-container&quot;&gt;
+    &lt;div class=&quot;topbar-left&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;brand-link&quot;&gt;
+            &lt;div class=&quot;analytics-logo&quot;&gt;
+                &lt;div class=&quot;bar bar1&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;bar bar2&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;bar bar3&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span class=&quot;brand-name&quot;&gt;Analytics&lt;/span&gt;
+        &lt;/a&gt;
+        
+        &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+        
+        &lt;div class=&quot;account-selector cursor-pointer&quot;&gt;
+            &lt;div class=&quot;account-breadcrumb&quot;&gt;
+                Tất cả tài khoản &lt;i class=&quot;bi bi-chevron-right&quot;&gt;&lt;/i&gt; Minh Hào
+            &lt;/div&gt;
+            &lt;div class=&quot;account-current&quot;&gt;
+                Minh Hào &lt;i class=&quot;bi bi-caret-down-fill ms-1&quot; style=&quot;font-size: 10px;&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;topbar-center&quot;&gt;
+        &lt;div class=&quot;search-box&quot;&gt;
+            &lt;i class=&quot;bi bi-search search-icon&quot;&gt;&lt;/i&gt;
+            &lt;input type=&quot;text&quot; class=&quot;search-input&quot; placeholder=&quot;Thử tìm kiếm &amp;quot;cách thiết lập Analytics&amp;quot;&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;topbar-right&quot;&gt;
+        &lt;button class=&quot;icon-btn&quot; type=&quot;button&quot;&gt;
+            &lt;i class=&quot;bi bi-grid-3x3-gap-fill&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+
+        &lt;button class=&quot;icon-btn&quot; type=&quot;button&quot;&gt;
+            &lt;i class=&quot;bi bi-question-circle-fill&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+
+        &lt;button class=&quot;avatar-btn&quot; type=&quot;button&quot;&gt;
+            &lt;div class=&quot;avatar purple-avatar&quot;&gt;P&lt;/div&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-topbar1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-topbar1">body {
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.topbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 12px 0 24px;
+    border-bottom: 1px solid #dadce0;
+    background-color: #ffffff;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    min-width: 320px;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #5f6368;
+}
+
+.analytics-logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    padding-bottom: 4px;
+}
+
+.analytics-logo .bar {
+    width: 6px;
+    border-radius: 2px 2px 0 0;
+}
+
+.analytics-logo .bar1 { height: 12px; background-color: #fbbc04; }
+.analytics-logo .bar2 { height: 18px; background-color: #f9ab00; }
+.analytics-logo .bar3 { height: 24px; background-color: #f29900; }
+
+.brand-name {
+    font-size: 22px;
+    color: #5f6368;
+    margin-right: 16px;
+    line-height: 1;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: #dadce0;
+    margin-right: 16px;
+}
+
+.account-selector {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.account-selector:hover {
+    background-color: #f1f3f4;
+}
+
+.account-breadcrumb {
+    font-size: 12px;
+    color: #5f6368;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.account-breadcrumb i {
+    font-size: 10px;
+}
+
+.account-current {
+    font-size: 20px;
+    color: #3c4043;
+    line-height: 1.2;
+}
+
+.topbar-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    height: 48px;
+    width: 100%;
+    max-width: 720px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box:focus-within {
+    background-color: #ffffff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-color: #dadce0;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #5f6368;
+    margin-right: 12px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    color: #202124;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #5f6368;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6368;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: #f1f3f4;
+}
+
+.avatar-btn {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.avatar-btn:hover {
+    background-color: #f1f3f4;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.purple-avatar { background-color: #9c27b0; }
+.cursor-pointer { cursor: pointer; }</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-sidebar" role="tabpanel" aria-labelledby="tab-sidebar-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">2. Sidebar Components</h1>
+                                <p class="text-muted mb-0 small">Thanh điều hướng bên cạnh (Side Navigation) mở rộng khi rê chuột kèm nhãn trạng thái và đếm thông báo</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#sidebar-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Analytics Sidebar Hover</a>
+                            </div>
+                        </div>
+
+                        <section id="sidebar-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Sidebar Hover (Thanh điều hướng thu gọn mở rộng khi rê chuột)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-mouse me-1"></i> Rê chuột để mở rộng sidebar
+                                    </span>
+                                </div>
+                                <div class="p-0 preview-container" id="preview-sidebar1" style="height: 480px; overflow: hidden; position: relative; border-radius: 8px;">
+                                    <div class="layout-wrapper" style="min-height: 100%; height: 480px;">
+    <aside class="hover-sidebar" id="hoverSidebar">
+        
+        <div class="sidebar-menu top-menu">
+            <a href="#" class="nav-item">
+                <div class="icon-wrapper">
+                    <i class="bi bi-house-door-fill"></i>
+                </div>
+                <span class="nav-text">Trang chủ</span>
+            </a>
+            
+            <a href="#" class="nav-item active">
+                <div class="icon-wrapper">
+                    <i class="bi bi-bar-chart-fill"></i>
+                </div>
+                <span class="nav-text">Báo cáo</span>
+            </a>
+            
+            <a href="#" class="nav-item">
+                <div class="icon-wrapper">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <span class="nav-text">Khám phá</span>
+            </a>
+            
+            <a href="#" class="nav-item">
+                <div class="icon-wrapper">
+                    <i class="bi bi-megaphone-fill"></i>
+                </div>
+                <span class="nav-text">Quảng cáo</span>
+            </a>
+        </div>
+
+        <div class="sidebar-menu bottom-menu">
+            <a href="#" class="nav-item">
+                <div class="icon-wrapper">
+                    <i class="bi bi-check2-circle"></i>
+                </div>
+                <span class="nav-text">Công việc</span>
+                <span class="badge rounded-pill bg-secondary ms-auto me-2 badge-count">8</span>
+            </a>
+            
+            <a href="#" class="nav-item">
+                <div class="icon-wrapper">
+                    <i class="bi bi-gear-fill"></i>
+                </div>
+                <span class="nav-text">Quản trị</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <main class="main-content p-4 bg-light">
+    </main>
+</div>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-sidebar1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-sidebar1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS &amp; JS Sidebar 1 --&gt;
+&lt;link rel="stylesheet" href="sidebar1.css"&gt;
+&lt;script src="sidebar1.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-sidebar1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-sidebar1">&lt;div class=&quot;layout-wrapper&quot;&gt;
+    &lt;aside class=&quot;hover-sidebar&quot; id=&quot;hoverSidebar&quot;&gt;
+        
+        &lt;div class=&quot;sidebar-menu top-menu&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;nav-item&quot;&gt;
+                &lt;div class=&quot;icon-wrapper&quot;&gt;
+                    &lt;i class=&quot;bi bi-house-door-fill&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;nav-text&quot;&gt;Trang chủ&lt;/span&gt;
+            &lt;/a&gt;
+            
+            &lt;a href=&quot;#&quot; class=&quot;nav-item active&quot;&gt;
+                &lt;div class=&quot;icon-wrapper&quot;&gt;
+                    &lt;i class=&quot;bi bi-bar-chart-fill&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;nav-text&quot;&gt;Báo cáo&lt;/span&gt;
+            &lt;/a&gt;
+            
+            &lt;a href=&quot;#&quot; class=&quot;nav-item&quot;&gt;
+                &lt;div class=&quot;icon-wrapper&quot;&gt;
+                    &lt;i class=&quot;bi bi-graph-up-arrow&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;nav-text&quot;&gt;Khám phá&lt;/span&gt;
+            &lt;/a&gt;
+            
+            &lt;a href=&quot;#&quot; class=&quot;nav-item&quot;&gt;
+                &lt;div class=&quot;icon-wrapper&quot;&gt;
+                    &lt;i class=&quot;bi bi-megaphone-fill&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;nav-text&quot;&gt;Quảng cáo&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;sidebar-menu bottom-menu&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;nav-item&quot;&gt;
+                &lt;div class=&quot;icon-wrapper&quot;&gt;
+                    &lt;i class=&quot;bi bi-check2-circle&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;nav-text&quot;&gt;Công việc&lt;/span&gt;
+                &lt;span class=&quot;badge rounded-pill bg-secondary ms-auto me-2 badge-count&quot;&gt;8&lt;/span&gt;
+            &lt;/a&gt;
+            
+            &lt;a href=&quot;#&quot; class=&quot;nav-item&quot;&gt;
+                &lt;div class=&quot;icon-wrapper&quot;&gt;
+                    &lt;i class=&quot;bi bi-gear-fill&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;nav-text&quot;&gt;Quản trị&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+
+    &lt;/aside&gt;
+
+    &lt;main class=&quot;main-content p-4 bg-light&quot;&gt;
+    &lt;/main&gt;
+&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-sidebar1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-sidebar1">body {
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    background-color: #f1f3f4;
+}
+
+.layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.hover-sidebar {
+    width: 64px;
+    background-color: #ffffff;
+    border-right: 1px solid #dadce0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+    position: relative;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.hover-sidebar:hover {
+    width: 240px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    gap: 4px;
+}
+
+.bottom-menu {
+    border-top: 1px solid transparent;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    text-decoration: none;
+    color: #5f6368;
+    margin: 0 12px;
+    border-radius: 24px;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-item:hover {
+    background-color: #f1f3f4;
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-text {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    margin-left: 8px;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.hover-sidebar:hover .nav-text {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-item.active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+.nav-item.active .icon-wrapper {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.hover-sidebar:hover .nav-item.active {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.hover-sidebar:hover .nav-item.active .icon-wrapper {
+    background-color: transparent;
+}
+
+.badge-count {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.hover-sidebar:hover .badge-count {
+    opacity: 1;
+}
+
+.main-content {
+    flex-grow: 1;
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-js fs-5"></i> NỘI DUNG JS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-js-sidebar1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy JS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-js-sidebar1">document.addEventListener(&#039;DOMContentLoaded&#039;, () =&gt; {
+    const navItems = document.querySelectorAll(&#039;.nav-item&#039;);
+    
+    navItems.forEach(item =&gt; {
+        item.addEventListener(&#039;click&#039;, (e) =&gt; {
+            e.preventDefault();
+            
+            navItems.forEach(nav =&gt; nav.classList.remove(&#039;active&#039;));
+            
+            item.classList.add(&#039;active&#039;);
+        });
+    });
+});</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-dropdowns" role="tabpanel" aria-labelledby="tab-dropdowns-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">3. Dropdown Components</h1>
+                                <p class="text-muted mb-0 small">Các mẫu Dropdown điều hướng bao gồm bảng ứng dụng (Apps Grid) và menu tài khoản người dùng (User Profile)</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#drop-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Apps Panel</a>
+                                <a href="#drop-mau-2" class="btn btn-sm btn-outline-secondary">Mẫu 2: Profile Account</a>
+                            </div>
+                        </div>
+
+                        <section id="drop-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Google Apps &amp; Marketing Platform Menu (Menu bảng ứng dụng)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-hand-index-thumb-fill me-1"></i> Click nút để mở menu
+                                    </span>
+                                </div>
+                                <div class="p-5 preview-container d-flex justify-content-center align-items-start" id="preview-dropdown1" style="background-color: #f8fafc; min-height: 280px; border-radius: 8px;">
+                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps Dropdown</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="dropdown1.css">
+</head>
+<body class="p-5 bg-light d-flex justify-content-center">
+
+<div class="dropdown">
+    <button class="icon-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+    </button>
+    
+    <div class="dropdown-menu shadow-sm apps-menu-panel">
+        <div class="apps-header">
+            <div class="gmp-logo"></div>
+            <span class="gmp-text"><span>Google</span> Marketing Platform</span>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <a class="app-item" href="#">
+            <div class="gmp-icon-small me-3">
+                <div class="dot blue"></div><div class="dot red"></div>
+                <div class="dot yellow"></div><div class="dot green"></div>
+            </div>
+            <span>Trang chủ nền tảng</span>
+        </a>
+        <a class="app-item active-app" href="#">
+            <div class="analytics-icon-small me-3">
+                <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+            </div>
+            <span>Analytics</span>
+        </a>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="explore-more" data-bs-toggle="collapse" data-bs-target="#moreAppsList" aria-expanded="true" onclick="event.stopPropagation()">
+            <span>Khám phá thêm các sản phẩm khác</span>
+            <i class="bi bi-chevron-up toggle-icon"></i>
+        </div>
+        
+        <div class="collapse show" id="moreAppsList">
+            <a class="app-item" href="#">
+                <i class="bi bi-vinyl-fill text-success fs-5 me-3"></i>
+                <span>Campaign Manager 360</span>
+            </a>
+            <a class="app-item" href="#">
+                <i class="bi bi-play-fill text-success fs-4 me-3"></i>
+                <span>Hiển thị và Video 360</span>
+            </a>
+            <a class="app-item" href="#">
+                <i class="bi bi-search text-primary fs-5 me-3 fw-bold"></i>
+                <span>Search Ads 360</span>
+            </a>
+            <a class="app-item" href="#">
+                <i class="bi bi-tags-fill text-primary fs-5 me-3"></i>
+                <span>Trình quản lý thẻ</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-dropdown1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-dropdown1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Dropdown 1 --&gt;
+&lt;link rel="stylesheet" href="dropdown1.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-dropdown1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-dropdown1">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Apps Dropdown&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;dropdown1.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;p-5 bg-light d-flex justify-content-center&quot;&gt;
+
+&lt;div class=&quot;dropdown&quot;&gt;
+    &lt;button class=&quot;icon-btn&quot; type=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot; data-bs-auto-close=&quot;outside&quot;&gt;
+        &lt;i class=&quot;bi bi-grid-3x3-gap-fill&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    
+    &lt;div class=&quot;dropdown-menu shadow-sm apps-menu-panel&quot;&gt;
+        &lt;div class=&quot;apps-header&quot;&gt;
+            &lt;div class=&quot;gmp-logo&quot;&gt;&lt;/div&gt;
+            &lt;span class=&quot;gmp-text&quot;&gt;&lt;span&gt;Google&lt;/span&gt; Marketing Platform&lt;/span&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;menu-divider&quot;&gt;&lt;/div&gt;
+        
+        &lt;a class=&quot;app-item&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;gmp-icon-small me-3&quot;&gt;
+                &lt;div class=&quot;dot blue&quot;&gt;&lt;/div&gt;&lt;div class=&quot;dot red&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;dot yellow&quot;&gt;&lt;/div&gt;&lt;div class=&quot;dot green&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span&gt;Trang chủ nền tảng&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;app-item active-app&quot; href=&quot;#&quot;&gt;
+            &lt;div class=&quot;analytics-icon-small me-3&quot;&gt;
+                &lt;div class=&quot;bar1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar3&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span&gt;Analytics&lt;/span&gt;
+        &lt;/a&gt;
+        
+        &lt;div class=&quot;menu-divider&quot;&gt;&lt;/div&gt;
+        
+        &lt;div class=&quot;explore-more&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#moreAppsList&quot; aria-expanded=&quot;true&quot; onclick=&quot;event.stopPropagation()&quot;&gt;
+            &lt;span&gt;Khám phá thêm các sản phẩm khác&lt;/span&gt;
+            &lt;i class=&quot;bi bi-chevron-up toggle-icon&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;collapse show&quot; id=&quot;moreAppsList&quot;&gt;
+            &lt;a class=&quot;app-item&quot; href=&quot;#&quot;&gt;
+                &lt;i class=&quot;bi bi-vinyl-fill text-success fs-5 me-3&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;Campaign Manager 360&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class=&quot;app-item&quot; href=&quot;#&quot;&gt;
+                &lt;i class=&quot;bi bi-play-fill text-success fs-4 me-3&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;Hiển thị và Video 360&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class=&quot;app-item&quot; href=&quot;#&quot;&gt;
+                &lt;i class=&quot;bi bi-search text-primary fs-5 me-3 fw-bold&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;Search Ads 360&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class=&quot;app-item&quot; href=&quot;#&quot;&gt;
+                &lt;i class=&quot;bi bi-tags-fill text-primary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;Trình quản lý thẻ&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-dropdown1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-dropdown1">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6368;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover, .icon-btn[aria-expanded=&quot;true&quot;] {
+    background-color: #f1f3f4;
+}
+
+.apps-menu-panel {
+    width: 320px;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 0 0 8px 0;
+    margin-top: 8px !important;
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0;
+}
+
+.apps-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 16px 16px;
+}
+
+.gmp-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 6px solid #4285f4;
+    border-top-color: #ea4335;
+    border-right-color: #fbbc04;
+    border-bottom-color: #34a853;
+}
+
+.gmp-text {
+    font-size: 20px;
+    color: #5f6368;
+    font-weight: 400;
+}
+
+.gmp-text span {
+    font-weight: 500;
+}
+
+.app-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #202124;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.app-item:hover {
+    background-color: #f1f3f4;
+}
+
+.app-item.active-app {
+    background-color: #f8f9fa;
+}
+
+.gmp-icon-small {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.gmp-icon-small .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.gmp-icon-small .blue { background-color: #4285f4; }
+.gmp-icon-small .red { background-color: #ea4335; }
+.gmp-icon-small .yellow { background-color: #fbbc04; }
+.gmp-icon-small .green { background-color: #34a853; }
+
+.analytics-icon-small {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.analytics-icon-small div {
+    width: 5px;
+    border-radius: 2px 2px 0 0;
+}
+
+.analytics-icon-small .bar1 { height: 10px; background-color: #fbbc04; }
+.analytics-icon-small .bar2 { height: 15px; background-color: #f9ab00; }
+.analytics-icon-small .bar3 { height: 20px; background-color: #f29900; }
+
+.explore-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 13px;
+    color: #3c4043;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-icon {
+    font-size: 16px;
+    color: #5f6368;
+    transition: transform 0.3s;
+}
+
+.explore-more[aria-expanded=&quot;false&quot;] .toggle-icon {
+    transform: rotate(180deg);
+}</code></pre>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="drop-mau-2" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 2</span>
+                                <h2 class="h5 fw-bold mb-0">Google Profile &amp; Account Switcher (Menu tài khoản người dùng)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-hand-index-thumb-fill me-1"></i> Click avatar để mở menu
+                                    </span>
+                                </div>
+                                <div class="p-5 preview-container d-flex justify-content-center align-items-start" id="preview-dropdown2" style="background-color: #f8fafc; min-height: 280px; border-radius: 8px;">
+                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Dropdown</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="dropdown2.css">
+</head>
+<body class="p-5 bg-light d-flex justify-content-center">
+
+<div class="dropdown">
+    <button class="avatar-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="avatar purple-avatar">P</div>
+    </button>
+    
+    <div class="dropdown-menu shadow-sm profile-menu-panel">
+        <div class="profile-header">
+            <div class="avatar-large purple-avatar">P</div>
+            <div class="profile-info">
+                <div class="profile-name">Phạm Minh Hào</div>
+                <div class="profile-email">phamminhhao0508200...</div>
+                <a href="#" class="privacy-link">Chính sách quyền riêng tư</a>
+            </div>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <a href="#" class="profile-item alt-account">
+            <div class="avatar-medium blue-avatar"><i class="bi bi-person-fill"></i></div>
+            <div class="alt-info">
+                <div class="alt-name">HÀO PHẠM MINH</div>
+                <div class="alt-email">2351010052hao@ou.edu.vn</div>
+            </div>
+        </a>
+        
+        <div class="menu-divider"></div>
+        
+        <a href="#" class="profile-item action-item">
+            <i class="bi bi-plus-lg fs-5"></i> Thêm tài khoản
+        </a>
+        <a href="#" class="profile-item action-item">
+            <i class="bi bi-list-ul fs-5"></i> Manage account
+        </a>
+        
+        <div class="menu-divider"></div>
+        
+        <a href="#" class="profile-item action-item">
+            <i class="bi bi-box-arrow-right fs-5"></i> Đăng xuất
+        </a>
+    </div>
+</div>
+
+
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-dropdown2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-dropdown2">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Dropdown 2 --&gt;
+&lt;link rel="stylesheet" href="dropdown2.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-dropdown2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-dropdown2">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Profile Dropdown&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;dropdown2.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;p-5 bg-light d-flex justify-content-center&quot;&gt;
+
+&lt;div class=&quot;dropdown&quot;&gt;
+    &lt;button class=&quot;avatar-btn&quot; type=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;
+        &lt;div class=&quot;avatar purple-avatar&quot;&gt;P&lt;/div&gt;
+    &lt;/button&gt;
+    
+    &lt;div class=&quot;dropdown-menu shadow-sm profile-menu-panel&quot;&gt;
+        &lt;div class=&quot;profile-header&quot;&gt;
+            &lt;div class=&quot;avatar-large purple-avatar&quot;&gt;P&lt;/div&gt;
+            &lt;div class=&quot;profile-info&quot;&gt;
+                &lt;div class=&quot;profile-name&quot;&gt;Phạm Minh Hào&lt;/div&gt;
+                &lt;div class=&quot;profile-email&quot;&gt;phamminhhao0508200...&lt;/div&gt;
+                &lt;a href=&quot;#&quot; class=&quot;privacy-link&quot;&gt;Chính sách quyền riêng tư&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;menu-divider&quot;&gt;&lt;/div&gt;
+        
+        &lt;a href=&quot;#&quot; class=&quot;profile-item alt-account&quot;&gt;
+            &lt;div class=&quot;avatar-medium blue-avatar&quot;&gt;&lt;i class=&quot;bi bi-person-fill&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+            &lt;div class=&quot;alt-info&quot;&gt;
+                &lt;div class=&quot;alt-name&quot;&gt;HÀO PHẠM MINH&lt;/div&gt;
+                &lt;div class=&quot;alt-email&quot;&gt;2351010052hao@ou.edu.vn&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        
+        &lt;div class=&quot;menu-divider&quot;&gt;&lt;/div&gt;
+        
+        &lt;a href=&quot;#&quot; class=&quot;profile-item action-item&quot;&gt;
+            &lt;i class=&quot;bi bi-plus-lg fs-5&quot;&gt;&lt;/i&gt; Thêm tài khoản
+        &lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;profile-item action-item&quot;&gt;
+            &lt;i class=&quot;bi bi-list-ul fs-5&quot;&gt;&lt;/i&gt; Manage account
+        &lt;/a&gt;
+        
+        &lt;div class=&quot;menu-divider&quot;&gt;&lt;/div&gt;
+        
+        &lt;a href=&quot;#&quot; class=&quot;profile-item action-item&quot;&gt;
+            &lt;i class=&quot;bi bi-box-arrow-right fs-5&quot;&gt;&lt;/i&gt; Đăng xuất
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-dropdown2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-dropdown2">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.avatar-btn {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.avatar-btn:hover, .avatar-btn[aria-expanded=&quot;true&quot;] {
+    background-color: #f1f3f4;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.profile-menu-panel {
+    width: 350px;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin-top: 8px !important;
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0;
+}
+
+.profile-header {
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+}
+
+.profile-info {
+    margin-left: 16px;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #202124;
+    margin-bottom: 2px;
+}
+
+.profile-email {
+    font-size: 14px;
+    color: #5f6368;
+    margin-bottom: 4px;
+}
+
+.privacy-link {
+    font-size: 12px;
+    color: #5f6368;
+    text-decoration: none;
+}
+
+.privacy-link:hover {
+    text-decoration: underline;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    text-decoration: none;
+}
+
+.profile-item:hover {
+    background-color: #f8f9fa;
+}
+
+.alt-account {
+    display: flex;
+    align-items: center;
+}
+
+.alt-info {
+    margin-left: 16px;
+}
+
+.alt-name {
+    font-size: 14px;
+    color: #3c4043;
+}
+
+.alt-email {
+    font-size: 12px;
+    color: #5f6368;
+}
+
+.action-item {
+    color: #3c4043;
+    font-size: 14px;
+}
+
+.action-item i {
+    margin-right: 16px;
+    color: #5f6368;
+}
+
+.avatar-medium {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.avatar-large {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.purple-avatar { background-color: #9c27b0; }
+.blue-avatar { background-color: #5c6bc0; }</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-popovers" role="tabpanel" aria-labelledby="tab-popovers-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">4. Popover Components</h1>
+                                <p class="text-muted mb-0 small">Hộp gợi ý thông tin nhanh dạng Popover hiển thị khi focus vào thanh tìm kiếm</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#popover-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Search Popover</a>
+                            </div>
+                        </div>
+
+                        <section id="popover-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Search Popover (Hộp gợi ý tìm kiếm tức thì)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-cursor me-1"></i> Focus vào ô tìm kiếm để hiển thị
+                                    </span>
+                                </div>
+                                <div class="p-5 preview-container d-flex justify-content-center align-items-start" id="preview-popover1" style="background-color: #f8fafc; min-height: 380px; border-radius: 8px;">
+                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Popover</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="popover1.css">
+</head>
+<body class="bg-light p-5">
+
+<div class="container d-flex justify-content-center pt-4">
+    
+    <div class="search-container position-relative">
+        
+        
+        <div class="search-box" id="searchBoxTrigger">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" class="search-input" id="searchInput" placeholder="Thử tìm kiếm &quot;Mã đo lường&quot;" autocomplete="off">
+            <a href="#" class="feedback-link">Phản<br>hồi</a>
+        </div>
+
+        
+        <div class="search-popover shadow" id="searchPopover">
+            
+            <div class="popover-section">
+                <div class="section-title">ĐƯỢC XEM GẦN ĐÂY</div>
+                
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-bar-chart-fill text-secondary fs-5 me-3"></i>
+                    <span>Thư viện</span>
+                </a>
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-bar-chart-fill text-secondary fs-5 me-3"></i>
+                    <span>Đối tượng</span>
+                </a>
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-bar-chart-fill text-secondary fs-5 me-3"></i>
+                    <span>Tổng quan về mục tiêu tạo khách hàng tiềm năng</span>
+                </a>
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-bar-chart-fill text-secondary fs-5 me-3"></i>
+                    <span>Giao dịch mua hàng thương mại điện tử</span>
+                </a>
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-bar-chart-fill text-secondary fs-5 me-3"></i>
+                    <span>Tổng quan về thuộc tính người dùng</span>
+                </a>
+            </div>
+
+            <div class="menu-divider"></div>
+
+            <div class="popover-section">
+                <div class="section-title">HỎI ANALYTICS THÔNG MINH</div>
+                
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-stars text-secondary fs-5 me-3"></i>
+                    <span>Có bao nhiêu người dùng từ lượt tìm kiếm không phải trả tiền trong 30 ngày qua?</span>
+                </a>
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-stars text-secondary fs-5 me-3"></i>
+                    <span>Xu hướng về doanh thu hàng tuần trong 12 tháng qua</span>
+                </a>
+                <a href="#" class="suggestion-item">
+                    <i class="bi bi-stars text-secondary fs-5 me-3"></i>
+                    <span>Các sản phẩm bán chạy nhất của tôi là gì?</span>
+                </a>
+                
+                <a href="#" class="more-suggestions-link">Các câu hỏi đề xuất khác</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-popover1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-popover1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS &amp; JS Popover 1 --&gt;
+&lt;link rel="stylesheet" href="popover1.css"&gt;
+&lt;script src="popover1.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-popover1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-popover1">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Search Popover&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;popover1.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-5&quot;&gt;
+
+&lt;div class=&quot;container d-flex justify-content-center pt-4&quot;&gt;
+    
+    &lt;div class=&quot;search-container position-relative&quot;&gt;
+        
+        
+        &lt;div class=&quot;search-box&quot; id=&quot;searchBoxTrigger&quot;&gt;
+            &lt;i class=&quot;bi bi-search search-icon&quot;&gt;&lt;/i&gt;
+            &lt;input type=&quot;text&quot; class=&quot;search-input&quot; id=&quot;searchInput&quot; placeholder=&quot;Thử tìm kiếm &amp;quot;Mã đo lường&amp;quot;&quot; autocomplete=&quot;off&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;feedback-link&quot;&gt;Phản&lt;br&gt;hồi&lt;/a&gt;
+        &lt;/div&gt;
+
+        
+        &lt;div class=&quot;search-popover shadow&quot; id=&quot;searchPopover&quot;&gt;
+            
+            &lt;div class=&quot;popover-section&quot;&gt;
+                &lt;div class=&quot;section-title&quot;&gt;ĐƯỢC XEM GẦN ĐÂY&lt;/div&gt;
+                
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-bar-chart-fill text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Thư viện&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-bar-chart-fill text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Đối tượng&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-bar-chart-fill text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Tổng quan về mục tiêu tạo khách hàng tiềm năng&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-bar-chart-fill text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Giao dịch mua hàng thương mại điện tử&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-bar-chart-fill text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Tổng quan về thuộc tính người dùng&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;menu-divider&quot;&gt;&lt;/div&gt;
+
+            &lt;div class=&quot;popover-section&quot;&gt;
+                &lt;div class=&quot;section-title&quot;&gt;HỎI ANALYTICS THÔNG MINH&lt;/div&gt;
+                
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-stars text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Có bao nhiêu người dùng từ lượt tìm kiếm không phải trả tiền trong 30 ngày qua?&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-stars text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Xu hướng về doanh thu hàng tuần trong 12 tháng qua&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;suggestion-item&quot;&gt;
+                    &lt;i class=&quot;bi bi-stars text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Các sản phẩm bán chạy nhất của tôi là gì?&lt;/span&gt;
+                &lt;/a&gt;
+                
+                &lt;a href=&quot;#&quot; class=&quot;more-suggestions-link&quot;&gt;Các câu hỏi đề xuất khác&lt;/a&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-popover1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-popover1">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 680px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    height: 48px;
+    width: 100%;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, box-shadow 0.2s, border-radius 0.2s;
+    position: relative;
+    z-index: 1051;
+}
+
+.search-box.active {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #5f6368;
+    margin-right: 12px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    color: #202124;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #5f6368;
+}
+
+.feedback-link {
+    font-size: 12px;
+    color: #1a73e8;
+    text-decoration: none;
+    line-height: 1.2;
+    text-align: center;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+.feedback-link:hover {
+    text-decoration: underline;
+}
+
+.search-popover {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    display: none;
+    z-index: 1050;
+    padding-bottom: 8px;
+}
+
+.search-popover.show {
+    display: block;
+}
+
+.popover-section {
+    padding: 12px 0;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: #5f6368;
+    letter-spacing: 0.5px;
+    padding: 8px 24px 12px 24px;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    text-decoration: none;
+    color: #3c4043;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #f1f3f4;
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 4px 0;
+}
+
+.more-suggestions-link {
+    display: block;
+    padding: 12px 24px;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.more-suggestions-link:hover {
+    background-color: #f1f3f4;
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-js fs-5"></i> NỘI DUNG JS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-js-popover1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy JS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-js-popover1">document.addEventListener(&#039;DOMContentLoaded&#039;, () =&gt; {
+    
+    const searchInput = document.getElementById(&#039;searchInput&#039;);
+    const searchBox = document.getElementById(&#039;searchBoxTrigger&#039;);
+    const searchPopover = document.getElementById(&#039;searchPopover&#039;);
+
+    searchInput.addEventListener(&#039;focus&#039;, () =&gt; {
+        searchPopover.classList.add(&#039;show&#039;);
+        searchBox.classList.add(&#039;active&#039;);
+    });
+
+    document.addEventListener(&#039;click&#039;, (e) =&gt; {
+        const isClickInside = searchBox.contains(e.target) || searchPopover.contains(e.target);
+        
+        if (!isClickInside) {
+            searchPopover.classList.remove(&#039;show&#039;);
+            searchBox.classList.remove(&#039;active&#039;);
+        }
+    });
+
+});</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-cards" role="tabpanel" aria-labelledby="tab-cards-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">5. Card Components</h1>
+                                <p class="text-muted mb-0 small">Thẻ giới thiệu tính năng (Promo Cards) với đồ họa minh họa dạng vector và thanh cuộn nội dung mượt mà</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#card-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Analytics Promo Cards</a>
+                            </div>
+                        </div>
+
+                        <section id="card-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Promo &amp; Demo Cards (Thẻ giới thiệu tính năng &amp; tài khoản mẫu)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-card-text me-1"></i> Scrollable Cards Box
+                                    </span>
+                                </div>
+                                <div class="p-4 preview-container d-flex justify-content-center align-items-center" id="preview-card1" style="background-color: #f8fafc; min-height: 480px; border-radius: 8px;">
+                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Promo Card</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="card1.css">
+</head>
+<body class="bg-light p-5 d-flex justify-content-center">
+
+<div class="card-scroll-container custom-scrollbar shadow-sm">
+    
+    <div class="analytics-promo-card">
+        <div class="card-illustration">
+            <svg viewBox="0 0 200 130" width="100%" height="130">
+                <polygon points="45,20 30,110 45,110" fill="#3c4043"/>
+                <line x1="20" y1="110" x2="180" y2="110" stroke="#3c4043" stroke-width="2.5"/>
+                
+                <rect x="45" y="20" width="135" height="90" fill="#ffffff" stroke="#3c4043" stroke-width="2.5" stroke-linejoin="round"/>
+                <line x1="45" y1="36" x2="180" y2="36" stroke="#3c4043" stroke-width="2.5"/>
+                <circle cx="55" cy="28" r="2.5" fill="none" stroke="#3c4043" stroke-width="2"/>
+                <circle cx="66" cy="28" r="2.5" fill="none" stroke="#3c4043" stroke-width="2"/>
+                
+                <polyline points="65,80 95,95 130,55 160,68" fill="none" stroke="#3c4043" stroke-width="2.5" stroke-linejoin="round"/>
+                
+                <circle cx="65" cy="80" r="6" fill="#4285f4"/>
+                <circle cx="95" cy="95" r="6" fill="#ea4335"/>
+                <circle cx="130" cy="55" r="6" fill="#fbbc04"/>
+                <circle cx="160" cy="68" r="6" fill="#34a853"/>
+            </svg>
+        </div>
+        
+        <div class="card-content">
+            <h3 class="promo-title">Dùng thử tài khoản Analytics minh họa</h3>
+            <p class="promo-desc">Tìm hiểu các tính năng của Google Analytics 4 bằng cách phân tích và thử nghiệm với dữ liệu doanh nghiệp thực tế</p>
+        </div>
+        
+        <div class="card-actions">
+            <a href="#" class="promo-link">Truy cập vào tài khoản này <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+        </div>
+    </div>
+
+    <div class="analytics-promo-card">
+        <div class="card-illustration">
+            <svg viewBox="0 0 200 130" width="100%" height="130">
+                <polygon points="45,20 30,110 45,110" fill="#3c4043"/>
+                <line x1="20" y1="110" x2="180" y2="110" stroke="#3c4043" stroke-width="2.5"/>
+                
+                <rect x="45" y="20" width="135" height="90" fill="#ffffff" stroke="#3c4043" stroke-width="2.5" stroke-linejoin="round"/>
+                <line x1="45" y1="36" x2="180" y2="36" stroke="#3c4043" stroke-width="2.5"/>
+                <circle cx="55" cy="28" r="2.5" fill="none" stroke="#3c4043" stroke-width="2"/>
+                <circle cx="66" cy="28" r="2.5" fill="none" stroke="#3c4043" stroke-width="2"/>
+                
+                <polyline points="65,80 95,95 130,55 160,68" fill="none" stroke="#3c4043" stroke-width="2.5" stroke-linejoin="round"/>
+                
+                <circle cx="65" cy="80" r="6" fill="#4285f4"/>
+                <circle cx="95" cy="95" r="6" fill="#ea4335"/>
+                <circle cx="130" cy="55" r="6" fill="#fbbc04"/>
+                <circle cx="160" cy="68" r="6" fill="#34a853"/>
+            </svg>
+        </div>
+        
+        <div class="card-content">
+            <h3 class="promo-title">Khám phá thư viện mẫu</h3>
+            <p class="promo-desc">Xem các báo cáo mẫu được cấu hình sẵn để hiểu rõ hơn về cách theo dõi hành vi người dùng trên website của bạn</p>
+        </div>
+        
+        <div class="card-actions">
+            <a href="#" class="promo-link">Xem thư viện mẫu <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-card1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-card1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Card 1 --&gt;
+&lt;link rel="stylesheet" href="card1.css"&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-card1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-card1">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Analytics Promo Card&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;card1.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-5 d-flex justify-content-center&quot;&gt;
+
+&lt;div class=&quot;card-scroll-container custom-scrollbar shadow-sm&quot;&gt;
+    
+    &lt;div class=&quot;analytics-promo-card&quot;&gt;
+        &lt;div class=&quot;card-illustration&quot;&gt;
+            &lt;svg viewBox=&quot;0 0 200 130&quot; width=&quot;100%&quot; height=&quot;130&quot;&gt;
+                &lt;polygon points=&quot;45,20 30,110 45,110&quot; fill=&quot;#3c4043&quot;/&gt;
+                &lt;line x1=&quot;20&quot; y1=&quot;110&quot; x2=&quot;180&quot; y2=&quot;110&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot;/&gt;
+                
+                &lt;rect x=&quot;45&quot; y=&quot;20&quot; width=&quot;135&quot; height=&quot;90&quot; fill=&quot;#ffffff&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot; stroke-linejoin=&quot;round&quot;/&gt;
+                &lt;line x1=&quot;45&quot; y1=&quot;36&quot; x2=&quot;180&quot; y2=&quot;36&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot;/&gt;
+                &lt;circle cx=&quot;55&quot; cy=&quot;28&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2&quot;/&gt;
+                &lt;circle cx=&quot;66&quot; cy=&quot;28&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2&quot;/&gt;
+                
+                &lt;polyline points=&quot;65,80 95,95 130,55 160,68&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot; stroke-linejoin=&quot;round&quot;/&gt;
+                
+                &lt;circle cx=&quot;65&quot; cy=&quot;80&quot; r=&quot;6&quot; fill=&quot;#4285f4&quot;/&gt;
+                &lt;circle cx=&quot;95&quot; cy=&quot;95&quot; r=&quot;6&quot; fill=&quot;#ea4335&quot;/&gt;
+                &lt;circle cx=&quot;130&quot; cy=&quot;55&quot; r=&quot;6&quot; fill=&quot;#fbbc04&quot;/&gt;
+                &lt;circle cx=&quot;160&quot; cy=&quot;68&quot; r=&quot;6&quot; fill=&quot;#34a853&quot;/&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;card-content&quot;&gt;
+            &lt;h3 class=&quot;promo-title&quot;&gt;Dùng thử tài khoản Analytics minh họa&lt;/h3&gt;
+            &lt;p class=&quot;promo-desc&quot;&gt;Tìm hiểu các tính năng của Google Analytics 4 bằng cách phân tích và thử nghiệm với dữ liệu doanh nghiệp thực tế&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;card-actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;promo-link&quot;&gt;Truy cập vào tài khoản này &lt;i class=&quot;bi bi-box-arrow-up-right ms-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;analytics-promo-card&quot;&gt;
+        &lt;div class=&quot;card-illustration&quot;&gt;
+            &lt;svg viewBox=&quot;0 0 200 130&quot; width=&quot;100%&quot; height=&quot;130&quot;&gt;
+                &lt;polygon points=&quot;45,20 30,110 45,110&quot; fill=&quot;#3c4043&quot;/&gt;
+                &lt;line x1=&quot;20&quot; y1=&quot;110&quot; x2=&quot;180&quot; y2=&quot;110&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot;/&gt;
+                
+                &lt;rect x=&quot;45&quot; y=&quot;20&quot; width=&quot;135&quot; height=&quot;90&quot; fill=&quot;#ffffff&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot; stroke-linejoin=&quot;round&quot;/&gt;
+                &lt;line x1=&quot;45&quot; y1=&quot;36&quot; x2=&quot;180&quot; y2=&quot;36&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot;/&gt;
+                &lt;circle cx=&quot;55&quot; cy=&quot;28&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2&quot;/&gt;
+                &lt;circle cx=&quot;66&quot; cy=&quot;28&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2&quot;/&gt;
+                
+                &lt;polyline points=&quot;65,80 95,95 130,55 160,68&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2.5&quot; stroke-linejoin=&quot;round&quot;/&gt;
+                
+                &lt;circle cx=&quot;65&quot; cy=&quot;80&quot; r=&quot;6&quot; fill=&quot;#4285f4&quot;/&gt;
+                &lt;circle cx=&quot;95&quot; cy=&quot;95&quot; r=&quot;6&quot; fill=&quot;#ea4335&quot;/&gt;
+                &lt;circle cx=&quot;130&quot; cy=&quot;55&quot; r=&quot;6&quot; fill=&quot;#fbbc04&quot;/&gt;
+                &lt;circle cx=&quot;160&quot; cy=&quot;68&quot; r=&quot;6&quot; fill=&quot;#34a853&quot;/&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;card-content&quot;&gt;
+            &lt;h3 class=&quot;promo-title&quot;&gt;Khám phá thư viện mẫu&lt;/h3&gt;
+            &lt;p class=&quot;promo-desc&quot;&gt;Xem các báo cáo mẫu được cấu hình sẵn để hiểu rõ hơn về cách theo dõi hành vi người dùng trên website của bạn&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;card-actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;promo-link&quot;&gt;Xem thư viện mẫu &lt;i class=&quot;bi bi-box-arrow-up-right ms-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-card1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-card1">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.card-scroll-container {
+    width: 320px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 8px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #dadce0;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #bdc1c6;
+}
+
+.analytics-promo-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.card-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+    margin-bottom: 8px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+}
+
+.promo-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: #202124;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.promo-desc {
+    font-size: 14px;
+    color: #3c4043;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+.promo-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.promo-link:hover {
+    color: #174ea6;
+}
+
+.promo-link i {
+    font-size: 14px;
+    font-weight: bold;
+}</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-offcanvas" role="tabpanel" aria-labelledby="tab-offcanvas-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">6. Offcanvas Components</h1>
+                                <p class="text-muted mb-0 small">Bảng nội dung trượt (Offcanvas) từ cạnh màn hình bao gồm bảng hỏi Analytics thông minh và trình ghi chú đa màn hình</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#offcanvas-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Insights Offcanvas</a>
+                                <a href="#offcanvas-mau-2" class="btn btn-sm btn-outline-secondary">Mẫu 2: Notes Offcanvas</a>
+                            </div>
+                        </div>
+
+                        <section id="offcanvas-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Insights Offcanvas (Bảng thông tin chi tiết trượt từ bên phải)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-hand-index-thumb-fill me-1"></i> Click nút tròn sao để mở Offcanvas
+                                    </span>
+                                </div>
+                                <div class="p-5 preview-container d-flex justify-content-center align-items-center" id="preview-offcanvas1" style="background-color: #f8fafc; min-height: 240px; border-radius: 8px;">
+                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Offcanvas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="offcanvas1.css">
+</head>
+<body class="bg-light p-5">
+
+<button class="btn btn-primary rounded-circle p-2 shadow d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#insightsOffcanvas">
+    <i class="bi bi-stars fs-4"></i>
+</button>
+
+<div class="offcanvas offcanvas-end custom-offcanvas shadow" tabindex="-1" id="insightsOffcanvas">
+    
+    <div class="offcanvas-header border-bottom py-3 px-4">
+        <div class="d-flex align-items-center gap-3">
+            <i class="bi bi-stars fs-4 text-secondary"></i>
+            <span class="fs-5 text-dark" style="font-weight: 400;">Thông tin chi tiết</span>
+        </div>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body p-0 custom-scrollbar">
+        
+        <div class="text-center p-4 pb-3">
+            <div class="text-dark mb-2" style="font-size: 15px; font-weight: 500;">Hỏi Analytics Thông minh</div>
+            <div class="text-secondary" style="font-size: 13px; line-height: 1.5; padding: 0 10px;">
+                Hãy chọn một câu hỏi dưới đây hoặc nhập trực tiếp câu hỏi vào thanh tìm kiếm.
+            </div>
+        </div>
+
+        <div class="px-4 pb-4">
+            <div class="accordion custom-accordion shadow-sm" id="insightsAccordion">
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBasic" aria-expanded="true">
+                            <i class="bi bi-bar-chart-line fs-5 me-3 icon-gray"></i>
+                            Hiệu quả hoạt động cơ bản
+                        </button>
+                    </h2>
+                    <div id="collapseBasic" class="accordion-collapse collapse show" data-bs-parent="#insightsAccordion">
+                        <div class="accordion-body p-0">
+                            <div class="question-list">
+                                <a href="#" class="question-item">Tôi đã có bao nhiêu người dùng trong tuần trước?</a>
+                                <a href="#" class="question-item">Các trang và màn hình hàng đầu của tôi theo lượt xem là gì?</a>
+                                <a href="#" class="question-item">Tôi nhận được nhiều người dùng nhất vào những ngày nào?</a>
+                                <a href="#" class="question-item">Có bao nhiêu người dùng mới trong năm nay?</a>
+                                <a href="#" class="question-item border-0">Những sự kiện nào là sự kiện hàng đầu của tôi theo người dùng?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDemo">
+                            <i class="bi bi-globe-americas fs-5 me-3 icon-gray"></i>
+                            Thông tin nhân khẩu học
+                        </button>
+                    </h2>
+                    <div id="collapseDemo" class="accordion-collapse collapse" data-bs-parent="#insightsAccordion">
+                        <div class="accordion-body p-0">
+                            <div class="question-list">
+                                <a href="#" class="question-item">Người dùng của tôi đến từ những quốc gia nào?</a>
+                                <a href="#" class="question-item border-0">Ngôn ngữ phổ biến nhất của người dùng là gì?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConvert">
+                            <i class="bi bi-person fs-5 me-3 icon-gray"></i>
+                            Lượt chuyển đổi người dùng
+                        </button>
+                    </h2>
+                    <div id="collapseConvert" class="accordion-collapse collapse" data-bs-parent="#insightsAccordion">
+                        <div class="accordion-body p-0">
+                            <div class="question-list">
+                                <a href="#" class="question-item">Tỷ lệ chuyển đổi hiện tại là bao nhiêu?</a>
+                                <a href="#" class="question-item border-0">Nguồn truy cập nào mang lại nhiều chuyển đổi nhất?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTraffic">
+                            <i class="bi bi-graph-up-arrow fs-5 me-3 icon-gray"></i>
+                            Bản phân tích lưu lượng truy cập
+                        </button>
+                    </h2>
+                    <div id="collapseTraffic" class="accordion-collapse collapse" data-bs-parent="#insightsAccordion">
+                        <div class="accordion-body p-0">
+                            <div class="question-list">
+                                <a href="#" class="question-item border-0">Chi tiết lưu lượng truy cập hôm nay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTech">
+                            <i class="bi bi-pc-display fs-5 me-3 icon-gray"></i>
+                            Công nghệ
+                        </button>
+                    </h2>
+                    <div id="collapseTech" class="accordion-collapse collapse" data-bs-parent="#insightsAccordion">
+                        <div class="accordion-body p-0">
+                            <div class="question-list">
+                                <a href="#" class="question-item border-0">Thiết bị nào được sử dụng nhiều nhất?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEcom">
+                            <i class="bi bi-cart2 fs-5 me-3 icon-gray"></i>
+                            Thương mại điện tử
+                        </button>
+                    </h2>
+                    <div id="collapseEcom" class="accordion-collapse collapse" data-bs-parent="#insightsAccordion">
+                        <div class="accordion-body p-0">
+                            <div class="question-list">
+                                <a href="#" class="question-item border-0">Doanh thu tổng cộng tuần này?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-offcanvas1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-offcanvas1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Offcanvas 1 --&gt;
+&lt;link rel="stylesheet" href="offcanvas1.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-offcanvas1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-offcanvas1">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Analytics Offcanvas&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;offcanvas1.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-5&quot;&gt;
+
+&lt;button class=&quot;btn btn-primary rounded-circle p-2 shadow d-flex align-items-center justify-content-center&quot; style=&quot;width: 48px; height: 48px;&quot; type=&quot;button&quot; data-bs-toggle=&quot;offcanvas&quot; data-bs-target=&quot;#insightsOffcanvas&quot;&gt;
+    &lt;i class=&quot;bi bi-stars fs-4&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;div class=&quot;offcanvas offcanvas-end custom-offcanvas shadow&quot; tabindex=&quot;-1&quot; id=&quot;insightsOffcanvas&quot;&gt;
+    
+    &lt;div class=&quot;offcanvas-header border-bottom py-3 px-4&quot;&gt;
+        &lt;div class=&quot;d-flex align-items-center gap-3&quot;&gt;
+            &lt;i class=&quot;bi bi-stars fs-4 text-secondary&quot;&gt;&lt;/i&gt;
+            &lt;span class=&quot;fs-5 text-dark&quot; style=&quot;font-weight: 400;&quot;&gt;Thông tin chi tiết&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn-close shadow-none&quot; data-bs-dismiss=&quot;offcanvas&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;offcanvas-body p-0 custom-scrollbar&quot;&gt;
+        
+        &lt;div class=&quot;text-center p-4 pb-3&quot;&gt;
+            &lt;div class=&quot;text-dark mb-2&quot; style=&quot;font-size: 15px; font-weight: 500;&quot;&gt;Hỏi Analytics Thông minh&lt;/div&gt;
+            &lt;div class=&quot;text-secondary&quot; style=&quot;font-size: 13px; line-height: 1.5; padding: 0 10px;&quot;&gt;
+                Hãy chọn một câu hỏi dưới đây hoặc nhập trực tiếp câu hỏi vào thanh tìm kiếm.
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;px-4 pb-4&quot;&gt;
+            &lt;div class=&quot;accordion custom-accordion shadow-sm&quot; id=&quot;insightsAccordion&quot;&gt;
+                
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                    &lt;h2 class=&quot;accordion-header&quot;&gt;
+                        &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseBasic&quot; aria-expanded=&quot;true&quot;&gt;
+                            &lt;i class=&quot;bi bi-bar-chart-line fs-5 me-3 icon-gray&quot;&gt;&lt;/i&gt;
+                            Hiệu quả hoạt động cơ bản
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id=&quot;collapseBasic&quot; class=&quot;accordion-collapse collapse show&quot; data-bs-parent=&quot;#insightsAccordion&quot;&gt;
+                        &lt;div class=&quot;accordion-body p-0&quot;&gt;
+                            &lt;div class=&quot;question-list&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item&quot;&gt;Tôi đã có bao nhiêu người dùng trong tuần trước?&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item&quot;&gt;Các trang và màn hình hàng đầu của tôi theo lượt xem là gì?&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item&quot;&gt;Tôi nhận được nhiều người dùng nhất vào những ngày nào?&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item&quot;&gt;Có bao nhiêu người dùng mới trong năm nay?&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item border-0&quot;&gt;Những sự kiện nào là sự kiện hàng đầu của tôi theo người dùng?&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                    &lt;h2 class=&quot;accordion-header&quot;&gt;
+                        &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseDemo&quot;&gt;
+                            &lt;i class=&quot;bi bi-globe-americas fs-5 me-3 icon-gray&quot;&gt;&lt;/i&gt;
+                            Thông tin nhân khẩu học
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id=&quot;collapseDemo&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#insightsAccordion&quot;&gt;
+                        &lt;div class=&quot;accordion-body p-0&quot;&gt;
+                            &lt;div class=&quot;question-list&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item&quot;&gt;Người dùng của tôi đến từ những quốc gia nào?&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item border-0&quot;&gt;Ngôn ngữ phổ biến nhất của người dùng là gì?&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                    &lt;h2 class=&quot;accordion-header&quot;&gt;
+                        &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseConvert&quot;&gt;
+                            &lt;i class=&quot;bi bi-person fs-5 me-3 icon-gray&quot;&gt;&lt;/i&gt;
+                            Lượt chuyển đổi người dùng
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id=&quot;collapseConvert&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#insightsAccordion&quot;&gt;
+                        &lt;div class=&quot;accordion-body p-0&quot;&gt;
+                            &lt;div class=&quot;question-list&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item&quot;&gt;Tỷ lệ chuyển đổi hiện tại là bao nhiêu?&lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item border-0&quot;&gt;Nguồn truy cập nào mang lại nhiều chuyển đổi nhất?&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                    &lt;h2 class=&quot;accordion-header&quot;&gt;
+                        &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseTraffic&quot;&gt;
+                            &lt;i class=&quot;bi bi-graph-up-arrow fs-5 me-3 icon-gray&quot;&gt;&lt;/i&gt;
+                            Bản phân tích lưu lượng truy cập
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id=&quot;collapseTraffic&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#insightsAccordion&quot;&gt;
+                        &lt;div class=&quot;accordion-body p-0&quot;&gt;
+                            &lt;div class=&quot;question-list&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item border-0&quot;&gt;Chi tiết lưu lượng truy cập hôm nay&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                    &lt;h2 class=&quot;accordion-header&quot;&gt;
+                        &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseTech&quot;&gt;
+                            &lt;i class=&quot;bi bi-pc-display fs-5 me-3 icon-gray&quot;&gt;&lt;/i&gt;
+                            Công nghệ
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id=&quot;collapseTech&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#insightsAccordion&quot;&gt;
+                        &lt;div class=&quot;accordion-body p-0&quot;&gt;
+                            &lt;div class=&quot;question-list&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item border-0&quot;&gt;Thiết bị nào được sử dụng nhiều nhất?&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                    &lt;h2 class=&quot;accordion-header&quot;&gt;
+                        &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseEcom&quot;&gt;
+                            &lt;i class=&quot;bi bi-cart2 fs-5 me-3 icon-gray&quot;&gt;&lt;/i&gt;
+                            Thương mại điện tử
+                        &lt;/button&gt;
+                    &lt;/h2&gt;
+                    &lt;div id=&quot;collapseEcom&quot; class=&quot;accordion-collapse collapse&quot; data-bs-parent=&quot;#insightsAccordion&quot;&gt;
+                        &lt;div class=&quot;accordion-body p-0&quot;&gt;
+                            &lt;div class=&quot;question-list&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;question-item border-0&quot;&gt;Doanh thu tổng cộng tuần này?&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-offcanvas1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-offcanvas1">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.custom-offcanvas {
+    width: 380px !important;
+    border-left: 1px solid #dadce0;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #dadce0;
+    border-radius: 4px;
+}
+
+.custom-accordion {
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.custom-accordion .accordion-item {
+    border: none;
+    border-bottom: 1px solid #dadce0;
+    border-radius: 0;
+}
+
+.custom-accordion .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.custom-accordion .accordion-button {
+    font-size: 14px;
+    color: #202124;
+    padding: 16px 20px;
+    background-color: #ffffff;
+    box-shadow: none !important;
+    font-weight: 400;
+}
+
+.icon-gray {
+    color: #5f6368;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background-color: #e8eaed;
+    color: #202124;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) .icon-gray {
+    color: #202124;
+}
+
+.custom-accordion .accordion-button::after {
+    background-size: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.question-list {
+    padding: 8px 0;
+    background-color: #ffffff;
+}
+
+.question-item {
+    display: block;
+    padding: 14px 8px;
+    margin: 0 20px;
+    font-size: 14px;
+    color: #3c4043;
+    text-decoration: none;
+    border-bottom: 1px solid #f1f3f4;
+    line-height: 1.4;
+    transition: background-color 0.2s;
+}
+
+.question-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}</code></pre>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="offcanvas-mau-2" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 2</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Notes Offcanvas (Trình xem &amp; tạo chú thích đa màn hình)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-hand-index-thumb-fill me-1"></i> Click nút để mở trình chú thích
+                                    </span>
+                                </div>
+                                <div class="p-5 preview-container d-flex justify-content-center align-items-center" id="preview-offcanvas2" style="background-color: #f8fafc; min-height: 240px; border-radius: 8px;">
+                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Notes Offcanvas</title>    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="offcanvas2.css">
+</head>
+<body class="bg-light p-5">
+
+<button class="btn btn-outline-secondary d-flex align-items-center gap-2 bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#notesOffcanvas">
+    <i class="bi bi-card-text"></i> Xem chú thích
+</button>
+
+<div class="offcanvas offcanvas-end custom-notes-offcanvas shadow" tabindex="-1" id="notesOffcanvas">
+    
+    
+    <div id="viewScreen" class="screen-container active">
+        <div class="offcanvas-header border-bottom">
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-card-text fs-5 text-secondary"></i>
+                <span class="fs-5 text-dark" style="font-weight: 400;">Trình xem chú thích</span>
+            </div>
+            <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        
+        <div class="offcanvas-body d-flex align-items-center justify-content-center text-center p-4">
+            <p class="text-secondary" style="font-size: 14px; line-height: 1.5; max-width: 250px;">
+                Không có chú thích nào trong phạm vi ngày hiện tại. Hãy nhấp vào nút bên dưới để tạo một chú thích.
+            </p>
+        </div>
+        
+        <div class="offcanvas-footer border-top p-3 d-flex justify-content-between align-items-center">
+            <button class="btn btn-link text-secondary p-0 fs-5">
+                <i class="bi bi-gear"></i>
+            </button>
+            <button class="btn btn-primary px-4 py-2 custom-btn-primary" id="btnGoToCreate">Tạo chú thích</button>
+        </div>
+    </div>
+
+    
+    <div id="createScreen" class="screen-container">
+        <div class="offcanvas-header border-bottom">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn-back" id="btnGoBack">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <span class="fs-5 text-dark" style="font-weight: 400;">Tạo chú thích</span>
+            </div>
+            <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        
+        <div class="offcanvas-body p-4">
+            <div class="mb-3 position-relative form-floating-custom">
+                <input type="text" class="form-control custom-input" id="noteTitle" placeholder="Tựa đề*">
+                <label for="noteTitle">Tựa đề*</label>
+                <div class="char-count">0/60</div>
+            </div>
+            
+            <div class="mb-3 position-relative form-floating-custom">
+                <textarea class="form-control custom-textarea" id="noteDesc" placeholder="Mô tả" rows="3"></textarea>
+                <label for="noteDesc">Mô tả</label>
+                <div class="char-count">0/150</div>
+            </div>
+            
+            <div class="mb-4 position-relative form-floating-custom">
+                <input type="text" class="form-control custom-input pe-5" id="noteDate" placeholder="Nhập ngày hoặc phạm vi ngày*">
+                <label for="noteDate">Nhập ngày hoặc phạm vi ngày*</label>
+                <i class="bi bi-calendar3 calendar-icon"></i>
+            </div>
+            
+            <div class="color-picker d-flex gap-3 mt-4">
+                <div class="color-circle active" style="background-color: #673ab7;">
+                    <i class="bi bi-check2"></i>
+                </div>
+                <div class="color-circle" style="background-color: #c62828;"></div>
+                <div class="color-circle" style="background-color: #2e7d32;"></div>
+                <div class="color-circle" style="background-color: #0288d1;"></div>
+                <div class="color-circle" style="background-color: #1565c0;"></div>
+                <div class="color-circle" style="background-color: #795548;"></div>
+            </div>
+        </div>
+        
+        <div class="offcanvas-footer border-top p-3 d-flex justify-content-end align-items-center bg-white">
+            <button class="btn btn-light px-4 py-2 custom-btn-disabled" disabled>Tạo chú thích</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-offcanvas2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-offcanvas2">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS &amp; JS Offcanvas 2 --&gt;
+&lt;link rel="stylesheet" href="offcanvas2.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle &amp; Custom JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="offcanvas2.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-offcanvas2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-offcanvas2">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Analytics Notes Offcanvas&lt;/title&gt;    
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;offcanvas2.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-5&quot;&gt;
+
+&lt;button class=&quot;btn btn-outline-secondary d-flex align-items-center gap-2 bg-white&quot; type=&quot;button&quot; data-bs-toggle=&quot;offcanvas&quot; data-bs-target=&quot;#notesOffcanvas&quot;&gt;
+    &lt;i class=&quot;bi bi-card-text&quot;&gt;&lt;/i&gt; Xem chú thích
+&lt;/button&gt;
+
+&lt;div class=&quot;offcanvas offcanvas-end custom-notes-offcanvas shadow&quot; tabindex=&quot;-1&quot; id=&quot;notesOffcanvas&quot;&gt;
+    
+    
+    &lt;div id=&quot;viewScreen&quot; class=&quot;screen-container active&quot;&gt;
+        &lt;div class=&quot;offcanvas-header border-bottom&quot;&gt;
+            &lt;div class=&quot;d-flex align-items-center gap-3&quot;&gt;
+                &lt;i class=&quot;bi bi-card-text fs-5 text-secondary&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;fs-5 text-dark&quot; style=&quot;font-weight: 400;&quot;&gt;Trình xem chú thích&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn-close-custom&quot; data-bs-dismiss=&quot;offcanvas&quot;&gt;
+                &lt;i class=&quot;bi bi-x-lg&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;offcanvas-body d-flex align-items-center justify-content-center text-center p-4&quot;&gt;
+            &lt;p class=&quot;text-secondary&quot; style=&quot;font-size: 14px; line-height: 1.5; max-width: 250px;&quot;&gt;
+                Không có chú thích nào trong phạm vi ngày hiện tại. Hãy nhấp vào nút bên dưới để tạo một chú thích.
+            &lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;offcanvas-footer border-top p-3 d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;button class=&quot;btn btn-link text-secondary p-0 fs-5&quot;&gt;
+                &lt;i class=&quot;bi bi-gear&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;btn btn-primary px-4 py-2 custom-btn-primary&quot; id=&quot;btnGoToCreate&quot;&gt;Tạo chú thích&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    
+    &lt;div id=&quot;createScreen&quot; class=&quot;screen-container&quot;&gt;
+        &lt;div class=&quot;offcanvas-header border-bottom&quot;&gt;
+            &lt;div class=&quot;d-flex align-items-center gap-3&quot;&gt;
+                &lt;button class=&quot;btn-back&quot; id=&quot;btnGoBack&quot;&gt;
+                    &lt;i class=&quot;bi bi-arrow-left&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;span class=&quot;fs-5 text-dark&quot; style=&quot;font-weight: 400;&quot;&gt;Tạo chú thích&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn-close-custom&quot; data-bs-dismiss=&quot;offcanvas&quot;&gt;
+                &lt;i class=&quot;bi bi-x-lg&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;offcanvas-body p-4&quot;&gt;
+            &lt;div class=&quot;mb-3 position-relative form-floating-custom&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control custom-input&quot; id=&quot;noteTitle&quot; placeholder=&quot;Tựa đề*&quot;&gt;
+                &lt;label for=&quot;noteTitle&quot;&gt;Tựa đề*&lt;/label&gt;
+                &lt;div class=&quot;char-count&quot;&gt;0/60&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;mb-3 position-relative form-floating-custom&quot;&gt;
+                &lt;textarea class=&quot;form-control custom-textarea&quot; id=&quot;noteDesc&quot; placeholder=&quot;Mô tả&quot; rows=&quot;3&quot;&gt;&lt;/textarea&gt;
+                &lt;label for=&quot;noteDesc&quot;&gt;Mô tả&lt;/label&gt;
+                &lt;div class=&quot;char-count&quot;&gt;0/150&lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;mb-4 position-relative form-floating-custom&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control custom-input pe-5&quot; id=&quot;noteDate&quot; placeholder=&quot;Nhập ngày hoặc phạm vi ngày*&quot;&gt;
+                &lt;label for=&quot;noteDate&quot;&gt;Nhập ngày hoặc phạm vi ngày*&lt;/label&gt;
+                &lt;i class=&quot;bi bi-calendar3 calendar-icon&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;color-picker d-flex gap-3 mt-4&quot;&gt;
+                &lt;div class=&quot;color-circle active&quot; style=&quot;background-color: #673ab7;&quot;&gt;
+                    &lt;i class=&quot;bi bi-check2&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;color-circle&quot; style=&quot;background-color: #c62828;&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;color-circle&quot; style=&quot;background-color: #2e7d32;&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;color-circle&quot; style=&quot;background-color: #0288d1;&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;color-circle&quot; style=&quot;background-color: #1565c0;&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;color-circle&quot; style=&quot;background-color: #795548;&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;offcanvas-footer border-top p-3 d-flex justify-content-end align-items-center bg-white&quot;&gt;
+            &lt;button class=&quot;btn btn-light px-4 py-2 custom-btn-disabled&quot; disabled&gt;Tạo chú thích&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-offcanvas2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-offcanvas2">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.custom-notes-offcanvas {
+    width: 320px !important;
+    border-left: 1px solid #dadce0;
+    position: fixed;
+    overflow: hidden;
+}
+
+.screen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#viewScreen {
+    transform: translateX(0);
+}
+
+#createScreen {
+    transform: translateX(100%);
+}
+
+.custom-notes-offcanvas.show-create #viewScreen {
+    transform: translateX(-100%);
+}
+
+.custom-notes-offcanvas.show-create #createScreen {
+    transform: translateX(0);
+}
+
+.offcanvas-header {
+    padding: 12px 16px;
+    height: 64px;
+}
+
+.offcanvas-footer {
+    height: 64px;
+}
+
+.btn-close-custom, .btn-back {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f6368;
+    transition: background-color 0.2s;
+    font-size: 20px;
+}
+
+.btn-close-custom {
+    background-color: #f1f3f4;
+}
+
+.btn-close-custom:hover {
+    background-color: #e8eaed;
+}
+
+.btn-back:hover {
+    background-color: #f1f3f4;
+}
+
+.custom-btn-primary {
+    background-color: #4285f4;
+    border-color: #4285f4;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.custom-btn-primary:hover {
+    background-color: #3b78e7;
+    border-color: #3b78e7;
+}
+
+.custom-btn-disabled {
+    background-color: #f1f3f4;
+    color: #9aa0a6;
+    border: none;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.form-floating-custom {
+    margin-bottom: 24px;
+}
+
+.custom-input, .custom-textarea {
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 24px 12px 8px 12px;
+    font-size: 14px;
+    color: #202124;
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+.custom-textarea {
+    resize: none;
+}
+
+.custom-input:focus, .custom-textarea:focus {
+    border-color: #1a73e8;
+    border-width: 2px;
+    padding: 23px 11px 7px 11px;
+}
+
+.form-floating-custom label {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    font-size: 14px;
+    color: #5f6368;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+.custom-input:focus ~ label,
+.custom-input:not(:placeholder-shown) ~ label,
+.custom-textarea:focus ~ label,
+.custom-textarea:not(:placeholder-shown) ~ label {
+    top: 6px;
+    font-size: 11px;
+    color: #1a73e8;
+}
+
+.custom-input:not(:focus):not(:placeholder-shown) ~ label,
+.custom-textarea:not(:focus):not(:placeholder-shown) ~ label {
+    color: #5f6368;
+}
+
+.custom-input::placeholder, .custom-textarea::placeholder {
+    color: transparent;
+}
+
+.char-count {
+    position: absolute;
+    bottom: -18px;
+    right: 0;
+    font-size: 11px;
+    color: #5f6368;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    color: #5f6368;
+    font-size: 18px;
+}
+
+.color-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+}
+
+.color-circle i {
+    display: none;
+}
+
+.color-circle.active i {
+    display: block;
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-js fs-5"></i> NỘI DUNG JS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-js-offcanvas2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy JS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-js-offcanvas2">document.addEventListener(&#039;DOMContentLoaded&#039;, () =&gt; {
+    const offcanvasEl = document.getElementById(&#039;notesOffcanvas&#039;);
+    const btnGoToCreate = document.getElementById(&#039;btnGoToCreate&#039;);
+    const btnGoBack = document.getElementById(&#039;btnGoBack&#039;);
+    const colorCircles = document.querySelectorAll(&#039;.color-circle&#039;);
+
+    btnGoToCreate.addEventListener(&#039;click&#039;, () =&gt; {
+        offcanvasEl.classList.add(&#039;show-create&#039;);
+    });
+
+    btnGoBack.addEventListener(&#039;click&#039;, () =&gt; {
+        offcanvasEl.classList.remove(&#039;show-create&#039;);
+    });
+
+    offcanvasEl.addEventListener(&#039;hidden.bs.offcanvas&#039;, () =&gt; {
+        offcanvasEl.classList.remove(&#039;show-create&#039;);
+    });
+
+    colorCircles.forEach(circle =&gt; {
+        circle.addEventListener(&#039;click&#039;, () =&gt; {
+            colorCircles.forEach(c =&gt; c.classList.remove(&#039;active&#039;));
+            circle.classList.add(&#039;active&#039;);
+        });
+    });
+});</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="testjs.js"></script>
+    <script src="sidebar1.js"></script>
+    <script src="popover1.js"></script>
+    <script src="offcanvas2.js"></script>
+</body>
+
+</html>

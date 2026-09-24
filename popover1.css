@@ -1,0 +1,124 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 680px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    height: 48px;
+    width: 100%;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, box-shadow 0.2s, border-radius 0.2s;
+    position: relative;
+    z-index: 1051;
+}
+
+.search-box.active {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #5f6368;
+    margin-right: 12px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    color: #202124;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #5f6368;
+}
+
+.feedback-link {
+    font-size: 12px;
+    color: #1a73e8;
+    text-decoration: none;
+    line-height: 1.2;
+    text-align: center;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+.feedback-link:hover {
+    text-decoration: underline;
+}
+
+.search-popover {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    display: none;
+    z-index: 1050;
+    padding-bottom: 8px;
+}
+
+.search-popover.show {
+    display: block;
+}
+
+.popover-section {
+    padding: 12px 0;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: #5f6368;
+    letter-spacing: 0.5px;
+    padding: 8px 24px 12px 24px;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    text-decoration: none;
+    color: #3c4043;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #f1f3f4;
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 4px 0;
+}
+
+.more-suggestions-link {
+    display: block;
+    padding: 12px 24px;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.more-suggestions-link:hover {
+    background-color: #f1f3f4;
+}

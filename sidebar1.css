@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    background-color: #f1f3f4;
+}
+
+.layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.hover-sidebar {
+    width: 64px;
+    background-color: #ffffff;
+    border-right: 1px solid #dadce0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+    position: relative;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.hover-sidebar:hover {
+    width: 240px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    gap: 4px;
+}
+
+.bottom-menu {
+    border-top: 1px solid transparent;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    text-decoration: none;
+    color: #5f6368;
+    margin: 0 12px;
+    border-radius: 24px;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-item:hover {
+    background-color: #f1f3f4;
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-text {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    margin-left: 8px;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.hover-sidebar:hover .nav-text {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-item.active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+.nav-item.active .icon-wrapper {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.hover-sidebar:hover .nav-item.active {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.hover-sidebar:hover .nav-item.active .icon-wrapper {
+    background-color: transparent;
+}
+
+.badge-count {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.hover-sidebar:hover .badge-count {
+    opacity: 1;
+}
+
+.main-content {
+    flex-grow: 1;
+}

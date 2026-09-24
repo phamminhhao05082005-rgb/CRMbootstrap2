@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps Dropdown</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="dropdown1.css">
+</head>
+<body class="p-5 bg-light d-flex justify-content-center">
+
+<div class="dropdown">
+    <button class="icon-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+    </button>
+    
+    <div class="dropdown-menu shadow-sm apps-menu-panel">
+        <div class="apps-header">
+            <div class="gmp-logo"></div>
+            <span class="gmp-text"><span>Google</span> Marketing Platform</span>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <a class="app-item" href="#">
+            <div class="gmp-icon-small me-3">
+                <div class="dot blue"></div><div class="dot red"></div>
+                <div class="dot yellow"></div><div class="dot green"></div>
+            </div>
+            <span>Trang chủ nền tảng</span>
+        </a>
+        <a class="app-item active-app" href="#">
+            <div class="analytics-icon-small me-3">
+                <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+            </div>
+            <span>Analytics</span>
+        </a>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="explore-more" data-bs-toggle="collapse" data-bs-target="#moreAppsList" aria-expanded="true" onclick="event.stopPropagation()">
+            <span>Khám phá thêm các sản phẩm khác</span>
+            <i class="bi bi-chevron-up toggle-icon"></i>
+        </div>
+        
+        <div class="collapse show" id="moreAppsList">
+            <a class="app-item" href="#">
+                <i class="bi bi-vinyl-fill text-success fs-5 me-3"></i>
+                <span>Campaign Manager 360</span>
+            </a>
+            <a class="app-item" href="#">
+                <i class="bi bi-play-fill text-success fs-4 me-3"></i>
+                <span>Hiển thị và Video 360</span>
+            </a>
+            <a class="app-item" href="#">
+                <i class="bi bi-search text-primary fs-5 me-3 fw-bold"></i>
+                <span>Search Ads 360</span>
+            </a>
+            <a class="app-item" href="#">
+                <i class="bi bi-tags-fill text-primary fs-5 me-3"></i>
+                <span>Trình quản lý thẻ</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
