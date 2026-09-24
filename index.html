@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="offcanvas1.css">
     <link rel="stylesheet" href="offcanvas2.css">
     <link rel="stylesheet" href="offcanvas3.css">
+    <link rel="stylesheet" href="sidebar2.css">
+    <link rel="stylesheet" href="card2.css">
+    <link rel="stylesheet" href="accordion1.css">
+    <link rel="stylesheet" href="modal1.css">
     <link rel="stylesheet" href="carousel1.css">
     <link rel="stylesheet" href="testcss.css">
 
@@ -28,6 +32,19 @@
             height: auto !important;
             overflow-y: auto !important;
             background-color: #f8fafc !important;
+        }
+        #preview-sidebar2 .layout-container,
+        #preview-sidebar2 .ga-sidebar {
+            height: 520px !important;
+        }
+        #preview-accordion1 .tasks-title {
+            font-size: 16px !important;
+            margin: 0 !important;
+        }
+        #preview-card2 .tasks-title {
+            font-size: 28px !important;
+            margin-top: 0 !important;
+            margin-bottom: 16px !important;
         }
     </style>
 </head>
@@ -110,6 +127,24 @@
                         <span class="d-flex align-items-center gap-2">
                             <i class="bi bi-images" style="color: #06b6d4;"></i>
                             <span>Carousel</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-accordion-btn" data-bs-toggle="pill" data-bs-target="#tab-accordion" type="button"
+                        role="tab" aria-controls="tab-accordion" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-menu-button-wide" style="color: #6366f1;"></i>
+                            <span>Accordion</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-modals-btn" data-bs-toggle="pill" data-bs-target="#tab-modals" type="button"
+                        role="tab" aria-controls="tab-modals" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-window-stack" style="color: #0ea5e9;"></i>
+                            <span>Modals</span>
                         </span>
                     </button>
                 </div>
@@ -478,6 +513,7 @@
                             </div>
                             <div class="d-flex flex-wrap gap-2">
                                 <a href="#sidebar-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Analytics Sidebar Hover</a>
+                                <a href="#sidebar-mau-2" class="btn btn-sm btn-outline-secondary">Mẫu 2: Analytics Sidebar Layout</a>
                             </div>
                         </div>
 
@@ -793,6 +829,571 @@
             item.classList.add(&#039;active&#039;);
         });
     });
+});</code></pre>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="sidebar-mau-2" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 2</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Sidebar Layout (Thanh điều hướng phân tích Google Analytics kèm nút thu gọn)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-layout-sidebar-inset me-1"></i> Expandable Sidebar Layout
+                                    </span>
+                                </div>
+                                <div class="p-0 preview-container" id="preview-sidebar2" style="height: 520px; overflow: hidden; position: relative; border-radius: 8px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Sidebar Layout</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="sidebar2.css">
+</head>
+<body>
+
+<div class="layout-container">
+    
+    <aside class="ga-sidebar" id="gaSidebar">
+        
+        <div class="sidebar-clip">
+            <div class="sidebar-inner custom-scrollbar">
+                
+                <div class="p-3 pb-2">
+                    <button class="btn btn-create shadow-sm d-flex align-items-center">
+                        <div class="plus-icon">
+                            <div class="p-top"></div>
+                            <div class="p-bottom"></div>
+                            <div class="p-left"></div>
+                            <div class="p-right"></div>
+                        </div>
+                        <span>Tạo</span>
+                        <i class="bi bi-caret-down-fill ms-2" style="font-size: 10px;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section mt-2">
+                    <a href="#" class="nav-link-item">Tổng quan nhanh về báo cáo</a>
+                    <a href="#" class="nav-link-item active">Tổng quan theo thời gian thực</a>
+                    <a href="#" class="nav-link-item">Trang theo thời gian thực</a>
+                </div>
+
+                <div class="accordion custom-accordion mt-2" id="sidebarAccordion">
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBusiness" aria-expanded="true">
+                                Mục tiêu kinh doanh
+                            </button>
+                        </h2>
+                        <div id="collapseBusiness" class="accordion-collapse collapse show">
+                            <div class="accordion-body p-0 pb-2">
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Tạo khách hàng tiềm năng
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Tăng doanh số
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Tìm hiểu lưu lượng truy cập w...
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Xem mức độ tương tác và tỷ l...
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUser">
+                                Người dùng
+                            </button>
+                        </h2>
+                        <div id="collapseUser" class="accordion-collapse collapse">
+                            <div class="accordion-body p-0 pb-2">
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Thuộc tính người dùng
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Công nghệ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseData">
+                                Nhập dữ liệu
+                            </button>
+                        </h2>
+                        <div id="collapseData" class="accordion-collapse collapse">
+                            <div class="accordion-body p-0 pb-2">
+                                <a href="#" class="sub-link-item">
+                                    Xác thực việc nhập dữ liệu ch...
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-auto border-top p-3 d-flex align-items-center">
+                    <a href="#" class="nav-link-item w-100 d-flex align-items-center gap-3 p-2 rounded" style="margin:0;">
+                        <i class="bi bi-folder2 fs-5"></i> Thư viện
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="toggle-sidebar-btn" id="toggleSidebarBtn">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </button>
+    </aside>
+
+    <main class="main-content">
+        <div class="placeholder-content h-100 w-100 d-flex align-items-center justify-content-center">
+            <div class="text-center text-secondary">
+                <i class="bi bi-map text-secondary opacity-25" style="font-size: 80px;"></i>
+                <h3 class="mt-3 fw-light">Nội dung báo cáo</h3>
+                <p>Khu vực này sẽ tự động mở rộng khi thu gọn Sidebar.</p>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="sidebar2.js"></script>
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-sidebar2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-sidebar2">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS &amp; JS Sidebar 2 --&gt;
+&lt;link rel="stylesheet" href="sidebar2.css"&gt;
+&lt;script src="sidebar2.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-sidebar2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-sidebar2">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Analytics Sidebar Layout&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;sidebar2.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;layout-container&quot;&gt;
+    
+    &lt;aside class=&quot;ga-sidebar&quot; id=&quot;gaSidebar&quot;&gt;
+        
+        &lt;div class=&quot;sidebar-clip&quot;&gt;
+            &lt;div class=&quot;sidebar-inner custom-scrollbar&quot;&gt;
+                
+                &lt;div class=&quot;p-3 pb-2&quot;&gt;
+                    &lt;button class=&quot;btn btn-create shadow-sm d-flex align-items-center&quot;&gt;
+                        &lt;div class=&quot;plus-icon&quot;&gt;
+                            &lt;div class=&quot;p-top&quot;&gt;&lt;/div&gt;
+                            &lt;div class=&quot;p-bottom&quot;&gt;&lt;/div&gt;
+                            &lt;div class=&quot;p-left&quot;&gt;&lt;/div&gt;
+                            &lt;div class=&quot;p-right&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span&gt;Tạo&lt;/span&gt;
+                        &lt;i class=&quot;bi bi-caret-down-fill ms-2&quot; style=&quot;font-size: 10px;&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;nav-section mt-2&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav-link-item&quot;&gt;Tổng quan nhanh về báo cáo&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav-link-item active&quot;&gt;Tổng quan theo thời gian thực&lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav-link-item&quot;&gt;Trang theo thời gian thực&lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;accordion custom-accordion mt-2&quot; id=&quot;sidebarAccordion&quot;&gt;
+                    
+                    &lt;div class=&quot;accordion-item&quot;&gt;
+                        &lt;h2 class=&quot;accordion-header&quot;&gt;
+                            &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseBusiness&quot; aria-expanded=&quot;true&quot;&gt;
+                                Mục tiêu kinh doanh
+                            &lt;/button&gt;
+                        &lt;/h2&gt;
+                        &lt;div id=&quot;collapseBusiness&quot; class=&quot;accordion-collapse collapse show&quot;&gt;
+                            &lt;div class=&quot;accordion-body p-0 pb-2&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;sub-link-item&quot;&gt;
+                                    &lt;i class=&quot;bi bi-caret-right-fill sub-icon&quot;&gt;&lt;/i&gt; Tạo khách hàng tiềm năng
+                                &lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;sub-link-item&quot;&gt;
+                                    &lt;i class=&quot;bi bi-caret-right-fill sub-icon&quot;&gt;&lt;/i&gt; Tăng doanh số
+                                &lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;sub-link-item&quot;&gt;
+                                    &lt;i class=&quot;bi bi-caret-right-fill sub-icon&quot;&gt;&lt;/i&gt; Tìm hiểu lưu lượng truy cập w...
+                                &lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;sub-link-item&quot;&gt;
+                                    &lt;i class=&quot;bi bi-caret-right-fill sub-icon&quot;&gt;&lt;/i&gt; Xem mức độ tương tác và tỷ l...
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;accordion-item&quot;&gt;
+                        &lt;h2 class=&quot;accordion-header&quot;&gt;
+                            &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseUser&quot;&gt;
+                                Người dùng
+                            &lt;/button&gt;
+                        &lt;/h2&gt;
+                        &lt;div id=&quot;collapseUser&quot; class=&quot;accordion-collapse collapse&quot;&gt;
+                            &lt;div class=&quot;accordion-body p-0 pb-2&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;sub-link-item&quot;&gt;
+                                    &lt;i class=&quot;bi bi-caret-right-fill sub-icon&quot;&gt;&lt;/i&gt; Thuộc tính người dùng
+                                &lt;/a&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;sub-link-item&quot;&gt;
+                                    &lt;i class=&quot;bi bi-caret-right-fill sub-icon&quot;&gt;&lt;/i&gt; Công nghệ
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;accordion-item&quot;&gt;
+                        &lt;h2 class=&quot;accordion-header&quot;&gt;
+                            &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseData&quot;&gt;
+                                Nhập dữ liệu
+                            &lt;/button&gt;
+                        &lt;/h2&gt;
+                        &lt;div id=&quot;collapseData&quot; class=&quot;accordion-collapse collapse&quot;&gt;
+                            &lt;div class=&quot;accordion-body p-0 pb-2&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;sub-link-item&quot;&gt;
+                                    Xác thực việc nhập dữ liệu ch...
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class=&quot;mt-auto border-top p-3 d-flex align-items-center&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;nav-link-item w-100 d-flex align-items-center gap-3 p-2 rounded&quot; style=&quot;margin:0;&quot;&gt;
+                        &lt;i class=&quot;bi bi-folder2 fs-5&quot;&gt;&lt;/i&gt; Thư viện
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;button class=&quot;toggle-sidebar-btn&quot; id=&quot;toggleSidebarBtn&quot;&gt;
+            &lt;i class=&quot;bi bi-chevron-left&quot; id=&quot;toggleIcon&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+    &lt;/aside&gt;
+
+    &lt;main class=&quot;main-content&quot;&gt;
+        &lt;div class=&quot;placeholder-content h-100 w-100 d-flex align-items-center justify-content-center&quot;&gt;
+            &lt;div class=&quot;text-center text-secondary&quot;&gt;
+                &lt;i class=&quot;bi bi-map text-secondary opacity-25&quot; style=&quot;font-size: 80px;&quot;&gt;&lt;/i&gt;
+                &lt;h3 class=&quot;mt-3 fw-light&quot;&gt;Nội dung báo cáo&lt;/h3&gt;
+                &lt;p&gt;Khu vực này sẽ tự động mở rộng khi thu gọn Sidebar.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;sidebar2.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-sidebar2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-sidebar2">body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.layout-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f1f3f4;
+}
+
+.ga-sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #dadce0;
+    position: relative;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+.ga-sidebar.collapsed {
+    width: 0;
+}
+
+.sidebar-clip {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sidebar-inner {
+    width: 260px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #dadce0;
+    border-radius: 4px;
+}
+
+.btn-create {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 24px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3c4043;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-create:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.plus-icon {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+}
+.plus-icon div {
+    position: absolute;
+    border-radius: 2px;
+}
+.p-top { width: 4px; height: 8px; top: 0; left: 5px; background: #ea4335; }
+.p-bottom { width: 4px; height: 8px; bottom: 0; left: 5px; background: #34a853; }
+.p-left { width: 8px; height: 4px; top: 5px; left: 0; background: #4285f4; }
+.p-right { width: 8px; height: 4px; top: 5px; right: 0; background: #fbbc04; }
+
+.nav-link-item {
+    display: block;
+    padding: 10px 16px 10px 24px;
+    margin: 2px 16px 2px 0;
+    color: #3c4043;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 0 24px 24px 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link-item:hover {
+    background-color: #f1f3f4;
+}
+
+.nav-link-item.active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+.custom-accordion {
+    --bs-accordion-border-width: 0;
+    --bs-accordion-bg: transparent;
+}
+
+.custom-accordion .accordion-button {
+    font-size: 13px;
+    font-weight: 500;
+    color: #3c4043;
+    padding: 12px 24px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:hover {
+    background-color: #f8f9fa;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: #3c4043;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button::after {
+    background-size: 12px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sub-link-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px 8px 24px;
+    margin: 2px 16px 2px 0;
+    color: #3c4043;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 0 24px 24px 0;
+    transition: background-color 0.2s;
+}
+
+.sub-link-item:hover {
+    background-color: #f1f3f4;
+}
+
+.sub-link-item.active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+.sub-icon {
+    font-size: 8px;
+    color: #5f6368;
+    margin-right: 12px;
+    width: 10px;
+}
+
+.toggle-sidebar-btn {
+    position: absolute;
+    bottom: 24px;
+    right: -16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f6368;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 105;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-sidebar-btn:hover {
+    background-color: #f8f9fa;
+    color: #202124;
+}
+
+.ga-sidebar.collapsed .toggle-sidebar-btn {
+    right: -32px;
+}
+
+.main-content {
+    flex-grow: 1;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #f4f7fc;
+    position: relative;
+    z-index: 1;
+}
+
+.placeholder-content {
+    background-image: radial-gradient(#dadce0 1px, transparent 1px);
+    background-size: 20px 20px;
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-js fs-5"></i> NỘI DUNG JS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-js-sidebar2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy JS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-js-sidebar2">document.addEventListener(&#039;DOMContentLoaded&#039;, () =&gt; {
+    
+    const sidebar = document.getElementById(&#039;gaSidebar&#039;);
+    const toggleBtn = document.getElementById(&#039;toggleSidebarBtn&#039;);
+    const toggleIcon = document.getElementById(&#039;toggleIcon&#039;);
+    
+    toggleBtn.addEventListener(&#039;click&#039;, () =&gt; {
+        sidebar.classList.toggle(&#039;collapsed&#039;);
+        
+        if (sidebar.classList.contains(&#039;collapsed&#039;)) {
+            toggleIcon.classList.remove(&#039;bi-chevron-left&#039;);
+            toggleIcon.classList.add(&#039;bi-chevron-right&#039;);
+        } else {
+            toggleIcon.classList.remove(&#039;bi-chevron-right&#039;);
+            toggleIcon.classList.add(&#039;bi-chevron-left&#039;);
+        }
+    });
+
+    const allLinks = document.querySelectorAll(&#039;.nav-link-item:not(.w-100), .sub-link-item&#039;);
+    
+    allLinks.forEach(link =&gt; {
+        link.addEventListener(&#039;click&#039;, (e) =&gt; {
+            e.preventDefault();
+            
+            allLinks.forEach(l =&gt; l.classList.remove(&#039;active&#039;));
+            link.classList.add(&#039;active&#039;);
+        });
+    });
+
 });</code></pre>
                                 </div>
                             </div>
@@ -1893,6 +2494,7 @@
                             </div>
                             <div class="d-flex flex-wrap gap-2">
                                 <a href="#card-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Analytics Promo Cards</a>
+                                <a href="#card-mau-2" class="btn btn-sm btn-outline-secondary">Mẫu 2: Tasks Banner Card</a>
                             </div>
                         </div>
 
@@ -2212,6 +2814,333 @@
 .promo-link i {
     font-size: 14px;
     font-weight: bold;
+}</code></pre>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="card-mau-2" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 2</span>
+                                <h2 class="h5 fw-bold mb-0">Tasks Banner Card (Thẻ thông báo tiến độ nhiệm vụ Analytics dạng Banner)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-card-checklist me-1"></i> Interactive Tasks Banner
+                                    </span>
+                                </div>
+                                <div class="p-4 preview-container d-flex justify-content-center align-items-center" id="preview-card2" style="background-color: #ffffff; min-height: 280px; border-radius: 8px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasks Banner Card</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="card2.css">
+</head>
+<body class="p-5 bg-white d-flex justify-content-center">
+
+<div class="tasks-banner-container">
+    <div class="tasks-content">
+        <h2 class="tasks-title">Tasks</h2>
+        <p class="tasks-description">
+            Thiết lập những tính năng này để khai thác tối đa tài sản của bạn. Bản phân tích dữ liệu nâng cao và thông minh hơn đang chờ bạn. 
+            <a href="#" class="tasks-link">Tìm hiểu thêm về nhiệm vụ</a>
+        </p>
+        
+        <div class="tasks-progress-info">
+            Còn 8 / 11 nhiệm vụ <i class="bi bi-question-circle"></i>
+        </div>
+        
+        <div class="tasks-progress-track">
+            <div class="tasks-progress-fill" style="width: 27%;"></div>
+        </div>
+    </div>
+    
+    <div class="tasks-illustration">
+        <svg viewBox="0 0 420 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="180" x2="400" y2="180" stroke="#3c4043" stroke-width="1"/>
+            
+            <rect x="250" y="80" width="120" height="90" fill="#f8f9fa" opacity="0.6"/>
+            
+            <rect x="180" y="40" width="140" height="100" fill="#ffffff" stroke="#3c4043" stroke-width="1.5"/>
+            <line x1="180" y1="52" x2="320" y2="52" stroke="#3c4043" stroke-width="1.5"/>
+            <circle cx="190" cy="46" r="1.5" fill="#3c4043"/>
+            <circle cx="196" cy="46" r="1.5" fill="#3c4043"/>
+            
+            <rect x="195" y="65" width="70" height="40" fill="none" stroke="#3c4043" stroke-width="1"/>
+            <circle cx="230" cy="85" r="12" fill="#4285f4"/>
+            
+            <rect x="275" y="65" width="30" height="40" fill="#f1f3f4"/>
+            <line x1="290" y1="75" x2="290" y2="95" stroke="#fff" stroke-width="2"/>
+            <line x1="280" y1="85" x2="300" y2="85" stroke="#fff" stroke-width="2"/>
+            
+            <line x1="195" y1="115" x2="230" y2="115" stroke="#3c4043" stroke-width="1.5"/>
+            <line x1="240" y1="115" x2="275" y2="115" stroke="#3c4043" stroke-width="1.5"/>
+            <line x1="285" y1="115" x2="305" y2="115" stroke="#3c4043" stroke-width="1.5"/>
+            <line x1="195" y1="125" x2="230" y2="125" stroke="#3c4043" stroke-width="1.5"/>
+            <line x1="240" y1="125" x2="275" y2="125" stroke="#3c4043" stroke-width="1.5"/>
+            <line x1="285" y1="125" x2="305" y2="125" stroke="#3c4043" stroke-width="1.5"/>
+            
+            <rect x="330" y="70" width="16" height="50" fill="#34a853"/>
+            <circle cx="360" cy="65" r="14" fill="#fbbc04"/>
+            
+            <path d="M346,80 Q356,70 366,80 L366,110 L346,110 Z" fill="#d2e3fc" stroke="#3c4043" stroke-width="1"/>
+            <circle cx="356" cy="62" r="6" fill="#8d6e63"/>
+            <path d="M350,110 L340,180 M362,110 L368,180" fill="none" stroke="#3c4043" stroke-width="1.5"/>
+            <path d="M346,80 L330,85 M366,80 L370,110" fill="none" stroke="#3c4043" stroke-width="1.5"/>
+            <line x1="334" y1="180" x2="346" y2="180" stroke="#3c4043" stroke-width="2"/>
+            <line x1="362" y1="180" x2="374" y2="180" stroke="#3c4043" stroke-width="2"/>
+            
+            <polyline points="100,180 100,150 140,150 140,180" fill="none" stroke="#3c4043" stroke-width="1"/>
+            <path d="M120,130 Q110,120 125,100 L140,100 L150,130 Z" fill="#ffffff" stroke="#3c4043" stroke-width="1"/>
+            <circle cx="125" cy="88" r="5" fill="#a1887f"/>
+            <circle cx="120" cy="80" r="4" fill="#8d6e63"/>
+            <path d="M125,130 L120,180 M140,130 L150,165 L165,165" fill="none" stroke="#3c4043" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M130,100 L180,110 M120,100 L110,120 L130,120" fill="none" stroke="#3c4043" stroke-width="1.5"/>
+            <path d="M125,130 Q130,140 140,130" fill="#d2e3fc" stroke="#3c4043" stroke-width="1"/>
+            <line x1="114" y1="180" x2="126" y2="180" stroke="#3c4043" stroke-width="2"/>
+            
+            <path d="M75,130 C65,130 65,145 75,145 L75,130 Z" fill="none" stroke="#3c4043" stroke-width="1"/>
+            <rect x="75" y="125" width="15" height="20" rx="2" fill="#ffffff" stroke="#3c4043" stroke-width="1"/>
+            <path d="M80,115 Q75,120 82,125 M85,110 Q80,115 87,120" fill="none" stroke="#3c4043" stroke-width="1"/>
+        </svg>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-card2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-card2">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Card 2 --&gt;
+&lt;link rel="stylesheet" href="card2.css"&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-card2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-card2">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Tasks Banner Card&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;card2.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;p-5 bg-white d-flex justify-content-center&quot;&gt;
+
+&lt;div class=&quot;tasks-banner-container&quot;&gt;
+    &lt;div class=&quot;tasks-content&quot;&gt;
+        &lt;h2 class=&quot;tasks-title&quot;&gt;Tasks&lt;/h2&gt;
+        &lt;p class=&quot;tasks-description&quot;&gt;
+            Thiết lập những tính năng này để khai thác tối đa tài sản của bạn. Bản phân tích dữ liệu nâng cao và thông minh hơn đang chờ bạn. 
+            &lt;a href=&quot;#&quot; class=&quot;tasks-link&quot;&gt;Tìm hiểu thêm về nhiệm vụ&lt;/a&gt;
+        &lt;/p&gt;
+        
+        &lt;div class=&quot;tasks-progress-info&quot;&gt;
+            Còn 8 / 11 nhiệm vụ &lt;i class=&quot;bi bi-question-circle&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;tasks-progress-track&quot;&gt;
+            &lt;div class=&quot;tasks-progress-fill&quot; style=&quot;width: 27%;&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;tasks-illustration&quot;&gt;
+        &lt;svg viewBox=&quot;0 0 420 200&quot; width=&quot;100%&quot; height=&quot;100%&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+            &lt;line x1=&quot;20&quot; y1=&quot;180&quot; x2=&quot;400&quot; y2=&quot;180&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            
+            &lt;rect x=&quot;250&quot; y=&quot;80&quot; width=&quot;120&quot; height=&quot;90&quot; fill=&quot;#f8f9fa&quot; opacity=&quot;0.6&quot;/&gt;
+            
+            &lt;rect x=&quot;180&quot; y=&quot;40&quot; width=&quot;140&quot; height=&quot;100&quot; fill=&quot;#ffffff&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;line x1=&quot;180&quot; y1=&quot;52&quot; x2=&quot;320&quot; y2=&quot;52&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;circle cx=&quot;190&quot; cy=&quot;46&quot; r=&quot;1.5&quot; fill=&quot;#3c4043&quot;/&gt;
+            &lt;circle cx=&quot;196&quot; cy=&quot;46&quot; r=&quot;1.5&quot; fill=&quot;#3c4043&quot;/&gt;
+            
+            &lt;rect x=&quot;195&quot; y=&quot;65&quot; width=&quot;70&quot; height=&quot;40&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            &lt;circle cx=&quot;230&quot; cy=&quot;85&quot; r=&quot;12&quot; fill=&quot;#4285f4&quot;/&gt;
+            
+            &lt;rect x=&quot;275&quot; y=&quot;65&quot; width=&quot;30&quot; height=&quot;40&quot; fill=&quot;#f1f3f4&quot;/&gt;
+            &lt;line x1=&quot;290&quot; y1=&quot;75&quot; x2=&quot;290&quot; y2=&quot;95&quot; stroke=&quot;#fff&quot; stroke-width=&quot;2&quot;/&gt;
+            &lt;line x1=&quot;280&quot; y1=&quot;85&quot; x2=&quot;300&quot; y2=&quot;85&quot; stroke=&quot;#fff&quot; stroke-width=&quot;2&quot;/&gt;
+            
+            &lt;line x1=&quot;195&quot; y1=&quot;115&quot; x2=&quot;230&quot; y2=&quot;115&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;line x1=&quot;240&quot; y1=&quot;115&quot; x2=&quot;275&quot; y2=&quot;115&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;line x1=&quot;285&quot; y1=&quot;115&quot; x2=&quot;305&quot; y2=&quot;115&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;line x1=&quot;195&quot; y1=&quot;125&quot; x2=&quot;230&quot; y2=&quot;125&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;line x1=&quot;240&quot; y1=&quot;125&quot; x2=&quot;275&quot; y2=&quot;125&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;line x1=&quot;285&quot; y1=&quot;125&quot; x2=&quot;305&quot; y2=&quot;125&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            
+            &lt;rect x=&quot;330&quot; y=&quot;70&quot; width=&quot;16&quot; height=&quot;50&quot; fill=&quot;#34a853&quot;/&gt;
+            &lt;circle cx=&quot;360&quot; cy=&quot;65&quot; r=&quot;14&quot; fill=&quot;#fbbc04&quot;/&gt;
+            
+            &lt;path d=&quot;M346,80 Q356,70 366,80 L366,110 L346,110 Z&quot; fill=&quot;#d2e3fc&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            &lt;circle cx=&quot;356&quot; cy=&quot;62&quot; r=&quot;6&quot; fill=&quot;#8d6e63&quot;/&gt;
+            &lt;path d=&quot;M350,110 L340,180 M362,110 L368,180&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;path d=&quot;M346,80 L330,85 M366,80 L370,110&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;line x1=&quot;334&quot; y1=&quot;180&quot; x2=&quot;346&quot; y2=&quot;180&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2&quot;/&gt;
+            &lt;line x1=&quot;362&quot; y1=&quot;180&quot; x2=&quot;374&quot; y2=&quot;180&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2&quot;/&gt;
+            
+            &lt;polyline points=&quot;100,180 100,150 140,150 140,180&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            &lt;path d=&quot;M120,130 Q110,120 125,100 L140,100 L150,130 Z&quot; fill=&quot;#ffffff&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            &lt;circle cx=&quot;125&quot; cy=&quot;88&quot; r=&quot;5&quot; fill=&quot;#a1887f&quot;/&gt;
+            &lt;circle cx=&quot;120&quot; cy=&quot;80&quot; r=&quot;4&quot; fill=&quot;#8d6e63&quot;/&gt;
+            &lt;path d=&quot;M125,130 L120,180 M140,130 L150,165 L165,165&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot; stroke-linejoin=&quot;round&quot;/&gt;
+            &lt;path d=&quot;M130,100 L180,110 M120,100 L110,120 L130,120&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1.5&quot;/&gt;
+            &lt;path d=&quot;M125,130 Q130,140 140,130&quot; fill=&quot;#d2e3fc&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            &lt;line x1=&quot;114&quot; y1=&quot;180&quot; x2=&quot;126&quot; y2=&quot;180&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;2&quot;/&gt;
+            
+            &lt;path d=&quot;M75,130 C65,130 65,145 75,145 L75,130 Z&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            &lt;rect x=&quot;75&quot; y=&quot;125&quot; width=&quot;15&quot; height=&quot;20&quot; rx=&quot;2&quot; fill=&quot;#ffffff&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+            &lt;path d=&quot;M80,115 Q75,120 82,125 M85,110 Q80,115 87,120&quot; fill=&quot;none&quot; stroke=&quot;#3c4043&quot; stroke-width=&quot;1&quot;/&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-card2', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-card2">body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+}
+
+.tasks-banner-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 36px 48px;
+    overflow: hidden;
+}
+
+.tasks-content {
+    flex: 1;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 24px;
+}
+
+.tasks-title {
+    font-size: 28px;
+    font-weight: 400;
+    color: #202124;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.tasks-description {
+    font-size: 14px;
+    color: #3c4043;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.tasks-link {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.tasks-link:hover {
+    text-decoration: underline;
+}
+
+.tasks-progress-info {
+    font-size: 14px;
+    color: #202124;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.tasks-progress-info i {
+    font-size: 13px;
+    color: #5f6368;
+    cursor: pointer;
+}
+
+.tasks-progress-track {
+    width: 100%;
+    height: 12px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.tasks-progress-fill {
+    height: 100%;
+    background-color: #4285f4;
+}
+
+.tasks-illustration {
+    flex: 0 0 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .tasks-banner-container {
+        flex-direction: column;
+        padding: 32px 24px;
+    }
+    
+    .tasks-illustration {
+        margin-top: 32px;
+        flex: 0 0 auto;
+    }
 }</code></pre>
                                 </div>
                             </div>
@@ -4709,6 +5638,1128 @@
                         </section>
                     </div>
 
+                    <div class="tab-pane fade" id="tab-accordion" role="tabpanel" aria-labelledby="tab-accordion-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">8. Accordion Components</h1>
+                                <p class="text-muted mb-0 small">Thành phần Accordion theo dõi tiến trình nhiệm vụ (Tasks Accordion) với khả năng thu gọn và mở rộng mượt mà</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#accordion-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Analytics Tasks Accordion</a>
+                            </div>
+                        </div>
+
+                        <section id="accordion-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Tasks Accordion (Danh sách nhiệm vụ Bắt đầu dạng Accordion thu gọn)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-menu-button-wide me-1"></i> Interactive Tasks Accordion
+                                    </span>
+                                </div>
+                                <div class="p-4 preview-container d-flex justify-content-center align-items-center" id="preview-accordion1" style="background-color: #f8fafc; border-radius: 8px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Tasks Accordion</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="accordion1.css">
+</head>
+<body class="bg-light p-5 d-flex justify-content-center">
+
+<div class="container" style="max-width: 1200px;">
+    
+    <div class="tasks-card shadow-sm">
+        
+        <div class="tasks-header" data-bs-toggle="collapse" data-bs-target="#tasksContent" aria-expanded="false" role="button">
+            <h3 class="tasks-title">Bắt đầu</h3>
+            
+            <div class="header-right">
+                <span class="tasks-badge">Còn 3 / 6 nhiệm vụ</span>
+                <i class="bi bi-chevron-down toggle-icon"></i>
+            </div>
+        </div>
+
+        <div class="collapse" id="tasksContent">
+            <div class="tasks-body">
+                
+                <p class="tasks-subtitle">Bắt đầu sử dụng Analytics bằng cách thu thập dữ liệu và quyết định cách dữ liệu xuất hiện trong báo cáo</p>
+                
+                <div class="task-list">
+                    
+                    <div class="task-item active">
+                        <div class="task-item-header">
+                            <i class="bi bi-circle fs-5 me-3 icon-pending"></i>
+                            <span class="task-name">Thiết lập tính năng thu thập dữ liệu</span>
+                        </div>
+                        
+                        <div class="task-item-body">
+                            <p class="task-desc">
+                                Thiết lập kết nối với Google Analytics bằng cách thêm mã hoặc SDK vào trang web hoặc ứng dụng của bạn để các báo cáo có thể bắt đầu điền sẵn dữ liệu. 
+                                <a href="#" class="task-link">Tìm hiểu thêm về cách thiết lập một tài sản</a> <i class="bi bi-question-circle ms-1 cursor-pointer"></i>
+                            </p>
+                            
+                            <div class="task-actions d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary d-flex align-items-center gap-2 custom-btn-primary">
+                                        <i class="bi bi-check2"></i> Hành động
+                                    </button>
+                                    <button class="btn btn-outline-secondary d-flex align-items-center gap-2 custom-btn-outline">
+                                        <i class="bi bi-play-btn-fill text-primary"></i> Xem video
+                                    </button>
+                                </div>
+                                
+                                <div class="feedback-actions text-secondary" style="font-size: 13px;">
+                                    Is this helpful? 
+                                    <i class="bi bi-hand-thumbs-up ms-2 cursor-pointer action-icon"></i>
+                                    <i class="bi bi-hand-thumbs-down ms-2 cursor-pointer action-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-item disabled">
+                        <div class="task-item-header">
+                            <i class="bi bi-lock text-secondary fs-5 me-3"></i>
+                            <span class="task-name text-secondary">Bật tín hiệu của Google</span>
+                        </div>
+                    </div>
+
+                    <div class="task-item disabled">
+                        <div class="task-item-header">
+                            <i class="bi bi-lock text-secondary fs-5 me-3"></i>
+                            <span class="task-name text-secondary">Tạo đối tượng</span>
+                        </div>
+                    </div>
+
+                    <div class="task-group mt-3">
+                        <div class="task-group-header" data-bs-toggle="collapse" data-bs-target="#completedTasks" aria-expanded="true" role="button">
+                            <i class="bi bi-chevron-up toggle-icon-sm me-2 text-secondary"></i>
+                            <span class="task-name text-secondary">Việc cần làm đã hoàn thành (3)</span>
+                        </div>
+                        
+                        <div class="collapse show" id="completedTasks">
+                            <div class="task-item completed">
+                                <div class="task-item-header">
+                                    <i class="bi bi-lock text-secondary fs-5 me-3"></i>
+                                    <span class="task-name text-secondary text-decoration-line-through">Thiết lập sự kiện quan trọng</span>
+                                </div>
+                            </div>
+                            
+                            <div class="task-item completed">
+                                <div class="task-item-header">
+                                    <i class="bi bi-lock text-secondary fs-5 me-3"></i>
+                                    <span class="task-name text-secondary text-decoration-line-through">Bật tính năng đo lường nâng cao</span>
+                                </div>
+                            </div>
+                            
+                            <div class="task-item completed">
+                                <div class="task-item-header">
+                                    <i class="bi bi-lock text-secondary fs-5 me-3"></i>
+                                    <span class="task-name text-secondary text-decoration-line-through">Xác nhận chế độ cài đặt quyền riêng tư</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-accordion1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-accordion1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Accordion 1 --&gt;
+&lt;link rel="stylesheet" href="accordion1.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-accordion1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-accordion1">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Analytics Tasks Accordion&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;accordion1.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-5 d-flex justify-content-center&quot;&gt;
+
+&lt;div class=&quot;container&quot; style=&quot;max-width: 1200px;&quot;&gt;
+    
+    &lt;div class=&quot;tasks-card shadow-sm&quot;&gt;
+        
+        &lt;div class=&quot;tasks-header&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#tasksContent&quot; aria-expanded=&quot;false&quot; role=&quot;button&quot;&gt;
+            &lt;h3 class=&quot;tasks-title&quot;&gt;Bắt đầu&lt;/h3&gt;
+            
+            &lt;div class=&quot;header-right&quot;&gt;
+                &lt;span class=&quot;tasks-badge&quot;&gt;Còn 3 / 6 nhiệm vụ&lt;/span&gt;
+                &lt;i class=&quot;bi bi-chevron-down toggle-icon&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;collapse&quot; id=&quot;tasksContent&quot;&gt;
+            &lt;div class=&quot;tasks-body&quot;&gt;
+                
+                &lt;p class=&quot;tasks-subtitle&quot;&gt;Bắt đầu sử dụng Analytics bằng cách thu thập dữ liệu và quyết định cách dữ liệu xuất hiện trong báo cáo&lt;/p&gt;
+                
+                &lt;div class=&quot;task-list&quot;&gt;
+                    
+                    &lt;div class=&quot;task-item active&quot;&gt;
+                        &lt;div class=&quot;task-item-header&quot;&gt;
+                            &lt;i class=&quot;bi bi-circle fs-5 me-3 icon-pending&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;task-name&quot;&gt;Thiết lập tính năng thu thập dữ liệu&lt;/span&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;task-item-body&quot;&gt;
+                            &lt;p class=&quot;task-desc&quot;&gt;
+                                Thiết lập kết nối với Google Analytics bằng cách thêm mã hoặc SDK vào trang web hoặc ứng dụng của bạn để các báo cáo có thể bắt đầu điền sẵn dữ liệu. 
+                                &lt;a href=&quot;#&quot; class=&quot;task-link&quot;&gt;Tìm hiểu thêm về cách thiết lập một tài sản&lt;/a&gt; &lt;i class=&quot;bi bi-question-circle ms-1 cursor-pointer&quot;&gt;&lt;/i&gt;
+                            &lt;/p&gt;
+                            
+                            &lt;div class=&quot;task-actions d-flex justify-content-between align-items-center&quot;&gt;
+                                &lt;div class=&quot;d-flex gap-2&quot;&gt;
+                                    &lt;button class=&quot;btn btn-primary d-flex align-items-center gap-2 custom-btn-primary&quot;&gt;
+                                        &lt;i class=&quot;bi bi-check2&quot;&gt;&lt;/i&gt; Hành động
+                                    &lt;/button&gt;
+                                    &lt;button class=&quot;btn btn-outline-secondary d-flex align-items-center gap-2 custom-btn-outline&quot;&gt;
+                                        &lt;i class=&quot;bi bi-play-btn-fill text-primary&quot;&gt;&lt;/i&gt; Xem video
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;feedback-actions text-secondary&quot; style=&quot;font-size: 13px;&quot;&gt;
+                                    Is this helpful? 
+                                    &lt;i class=&quot;bi bi-hand-thumbs-up ms-2 cursor-pointer action-icon&quot;&gt;&lt;/i&gt;
+                                    &lt;i class=&quot;bi bi-hand-thumbs-down ms-2 cursor-pointer action-icon&quot;&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;task-item disabled&quot;&gt;
+                        &lt;div class=&quot;task-item-header&quot;&gt;
+                            &lt;i class=&quot;bi bi-lock text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;task-name text-secondary&quot;&gt;Bật tín hiệu của Google&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;task-item disabled&quot;&gt;
+                        &lt;div class=&quot;task-item-header&quot;&gt;
+                            &lt;i class=&quot;bi bi-lock text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;task-name text-secondary&quot;&gt;Tạo đối tượng&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;task-group mt-3&quot;&gt;
+                        &lt;div class=&quot;task-group-header&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#completedTasks&quot; aria-expanded=&quot;true&quot; role=&quot;button&quot;&gt;
+                            &lt;i class=&quot;bi bi-chevron-up toggle-icon-sm me-2 text-secondary&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;task-name text-secondary&quot;&gt;Việc cần làm đã hoàn thành (3)&lt;/span&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;collapse show&quot; id=&quot;completedTasks&quot;&gt;
+                            &lt;div class=&quot;task-item completed&quot;&gt;
+                                &lt;div class=&quot;task-item-header&quot;&gt;
+                                    &lt;i class=&quot;bi bi-lock text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;task-name text-secondary text-decoration-line-through&quot;&gt;Thiết lập sự kiện quan trọng&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;task-item completed&quot;&gt;
+                                &lt;div class=&quot;task-item-header&quot;&gt;
+                                    &lt;i class=&quot;bi bi-lock text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;task-name text-secondary text-decoration-line-through&quot;&gt;Bật tính năng đo lường nâng cao&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;task-item completed&quot;&gt;
+                                &lt;div class=&quot;task-item-header&quot;&gt;
+                                    &lt;i class=&quot;bi bi-lock text-secondary fs-5 me-3&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;task-name text-secondary text-decoration-line-through&quot;&gt;Xác nhận chế độ cài đặt quyền riêng tư&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-accordion1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-accordion1">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.tasks-card {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.tasks-header:hover {
+    background-color: #f1f3f4;
+}
+
+.tasks-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #202124;
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tasks-badge {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.toggle-icon {
+    font-size: 14px;
+    color: #5f6368;
+    transition: transform 0.3s;
+}
+
+.tasks-header[aria-expanded=&quot;true&quot;] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.tasks-header[aria-expanded=&quot;true&quot;] {
+    background-color: #ffffff;
+    border-bottom: 1px solid transparent;
+}
+
+.tasks-body {
+    padding: 0 24px 24px 24px;
+}
+
+.tasks-subtitle {
+    font-size: 13px;
+    color: #5f6368;
+    margin-bottom: 24px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-item {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+}
+
+.task-item-header {
+    display: flex;
+    align-items: center;
+}
+
+.task-name {
+    font-size: 14px;
+    color: #202124;
+}
+
+.icon-pending {
+    color: #202124;
+    font-size: 18px;
+}
+
+.task-item.active .task-name {
+    font-weight: 500;
+}
+
+.task-item-body {
+    padding-left: 36px;
+    margin-top: 12px;
+}
+
+.task-desc {
+    font-size: 13px;
+    color: #3c4043;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.task-link {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.task-link:hover {
+    text-decoration: underline;
+}
+
+.custom-btn-primary {
+    background-color: #4285f4;
+    border-color: #4285f4;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 4px;
+}
+
+.custom-btn-primary:hover {
+    background-color: #3b78e7;
+    border-color: #3b78e7;
+}
+
+.custom-btn-outline {
+    background-color: #ffffff;
+    color: #3c4043;
+    border-color: #dadce0;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 4px;
+}
+
+.custom-btn-outline:hover {
+    background-color: #f8f9fa;
+    color: #202124;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.action-icon {
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.action-icon:hover {
+    color: #1a73e8;
+}
+
+.task-item.disabled, .task-item.completed {
+    padding: 12px 0;
+}
+
+.task-group-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-icon-sm {
+    transition: transform 0.3s;
+}
+
+.task-group-header[aria-expanded=&quot;false&quot;] .toggle-icon-sm {
+    transform: rotate(180deg);
+}</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-modals" role="tabpanel" aria-labelledby="tab-modals-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">9. Modal Components</h1>
+                                <p class="text-muted mb-0 small">Hộp thoại chuyển đổi tài khoản (Account Selector Modal) với tab lọc, thanh tìm kiếm và danh sách thuộc tính Analytics</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#modal-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Account Selector Modal</a>
+                            </div>
+                        </div>
+
+                        <section id="modal-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Account Selector Modal (Hộp thoại lựa chọn tài khoản &amp; thuộc tính)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-hand-index-thumb-fill me-1"></i> Click chọn tài khoản để kích hoạt Modal
+                                    </span>
+                                </div>
+                                <div class="p-5 preview-container d-flex justify-content-center align-items-center" id="preview-modal1" style="background-color: #f8fafc !important; min-height: 220px; border-radius: 8px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Selector Modal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="modal1.css">
+</head>
+<body class="bg-light p-5">
+
+<div class="account-selector cursor-pointer" data-bs-toggle="modal" data-bs-target="#accountModal">
+    <div class="account-breadcrumb">
+        Tất cả tài khoản <i class="bi bi-chevron-right"></i> Minh Hào
+    </div>
+    <div class="account-current">
+        Minh Hào <i class="bi bi-caret-down-fill ms-1" style="font-size: 10px;"></i>
+    </div>
+</div>
+
+<div class="modal fade" id="accountModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+        <div class="modal-content custom-modal-content shadow-lg">
+            
+            <div class="modal-header border-bottom-0 pb-0">
+                <div class="d-flex align-items-center w-100 justify-content-between">
+                    
+                    <ul class="nav nav-tabs custom-tabs border-bottom-0" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab">Tất cả</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-fav" type="button" role="tab">Ưa thích</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-recent" type="button" role="tab">Gần đây</button>
+                        </li>
+                    </ul>
+
+                    <div class="search-box mx-4">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm">
+                    </div>
+
+                    <a href="#" class="platform-link">Truy cập vào Trang chủ Platform</a>
+                </div>
+            </div>
+
+            <div class="modal-body p-0" style="height: 500px;">
+                <div class="tab-content h-100">
+                    <div class="tab-pane fade show active h-100 custom-tab-pane" id="tab-all" role="tabpanel">
+                        <div class="filter-bar d-flex justify-content-between align-items-center px-4 py-2 border-bottom w-100">
+                            <div class="d-flex gap-3">
+                                <div class="analytics-icon-small active">
+                                    <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+                                </div>
+                                <div class="tag-manager-icon-small">
+                                    <div class="diamond bg-primary opacity-50"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="account-filter border rounded px-3 py-1 text-secondary" style="font-size: 13px; width: 250px;">
+                                Tất cả tài khoản
+                            </div>
+                        </div>
+
+                        <div class="table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100" style="font-size: 12px; font-weight: 500;">
+                            <div style="flex: 2;">Tài khoản Analytics</div>
+                            <div style="flex: 1;">Thuộc tính và ứng dụng</div>
+                        </div>
+
+                        <div class="table-body d-flex flex-grow-1 overflow-hidden w-100">
+                            <div class="account-list custom-scrollbar border-end" style="flex: 2; overflow-y: auto;">
+                                <div class="list-item d-flex justify-content-between align-items-center active">
+                                    <div>
+                                        <div class="item-name">Minh Hào</div>
+                                        <div class="item-id">409160974</div>
+                                    </div>
+                                    <i class="bi bi-chevron-right text-dark"></i>
+                                </div>
+                            </div>
+
+                            <div class="property-list custom-scrollbar bg-light" style="flex: 1; overflow-y: auto;">
+                                <div class="list-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="item-name">Minh Hào</div>
+                                        <div class="item-id">555526409</div>
+                                    </div>
+                                    <div class="d-flex gap-3 text-secondary fs-5">
+                                        <i class="bi bi-check2 text-dark"></i>
+                                        <i class="bi bi-star cursor-pointer hover-dark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade h-100 custom-tab-pane" id="tab-fav" role="tabpanel">
+                        <div class="table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100" style="font-size: 12px; font-weight: 500;">
+                            <div style="flex: 1;">Thuộc tính và ứng dụng</div>
+                            <div style="flex: 1;">Tài khoản Analytics</div>
+                        </div>
+                        
+                        <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-light w-100">
+                            <i class="bi bi-star text-secondary opacity-50 mb-3" style="font-size: 48px;"></i>
+                            <p class="text-secondary" style="font-size: 14px;">Không có mục ưa thích nào</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade h-100 custom-tab-pane" id="tab-recent" role="tabpanel">
+                        <div class="table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100" style="font-size: 12px; font-weight: 500;">
+                            <div style="flex: 1;">Thuộc tính và ứng dụng</div>
+                            <div style="flex: 1;">Tài khoản Analytics</div>
+                        </div>
+                        
+                        <div class="property-list custom-scrollbar bg-light flex-grow-1 w-100" style="overflow-y: auto;">
+                            <div class="list-item d-flex align-items-center px-4 hover-item">
+                                <div style="flex: 1;">
+                                    <div class="item-name text-primary d-flex align-items-center gap-2">
+                                        <div class="analytics-icon-micro">
+                                            <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+                                        </div>
+                                        Minh Hào
+                                    </div>
+                                    <div class="item-id text-muted" style="margin-left: 20px;">555526409</div>
+                                </div>
+                                <div style="flex: 1;" class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="item-name">Minh Hào</div>
+                                        <div class="item-id">409160974</div>
+                                    </div>
+                                    <div class="d-flex gap-3 text-secondary fs-5">
+                                        <i class="bi bi-star cursor-pointer hover-dark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-modal1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-modal1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Modal 1 --&gt;
+&lt;link rel="stylesheet" href="modal1.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-modal1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-modal1">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Account Selector Modal&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;modal1.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-5&quot;&gt;
+
+&lt;div class=&quot;account-selector cursor-pointer&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#accountModal&quot;&gt;
+    &lt;div class=&quot;account-breadcrumb&quot;&gt;
+        Tất cả tài khoản &lt;i class=&quot;bi bi-chevron-right&quot;&gt;&lt;/i&gt; Minh Hào
+    &lt;/div&gt;
+    &lt;div class=&quot;account-current&quot;&gt;
+        Minh Hào &lt;i class=&quot;bi bi-caret-down-fill ms-1&quot; style=&quot;font-size: 10px;&quot;&gt;&lt;/i&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;modal fade&quot; id=&quot;accountModal&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;modal-dialog modal-dialog-centered custom-modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content custom-modal-content shadow-lg&quot;&gt;
+            
+            &lt;div class=&quot;modal-header border-bottom-0 pb-0&quot;&gt;
+                &lt;div class=&quot;d-flex align-items-center w-100 justify-content-between&quot;&gt;
+                    
+                    &lt;ul class=&quot;nav nav-tabs custom-tabs border-bottom-0&quot; role=&quot;tablist&quot;&gt;
+                        &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
+                            &lt;button class=&quot;nav-link active&quot; data-bs-toggle=&quot;tab&quot; data-bs-target=&quot;#tab-all&quot; type=&quot;button&quot; role=&quot;tab&quot;&gt;Tất cả&lt;/button&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
+                            &lt;button class=&quot;nav-link&quot; data-bs-toggle=&quot;tab&quot; data-bs-target=&quot;#tab-fav&quot; type=&quot;button&quot; role=&quot;tab&quot;&gt;Ưa thích&lt;/button&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;nav-item&quot; role=&quot;presentation&quot;&gt;
+                            &lt;button class=&quot;nav-link&quot; data-bs-toggle=&quot;tab&quot; data-bs-target=&quot;#tab-recent&quot; type=&quot;button&quot; role=&quot;tab&quot;&gt;Gần đây&lt;/button&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+
+                    &lt;div class=&quot;search-box mx-4&quot;&gt;
+                        &lt;i class=&quot;bi bi-search search-icon&quot;&gt;&lt;/i&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;search-input&quot; placeholder=&quot;Tìm kiếm&quot;&gt;
+                    &lt;/div&gt;
+
+                    &lt;a href=&quot;#&quot; class=&quot;platform-link&quot;&gt;Truy cập vào Trang chủ Platform&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-body p-0&quot; style=&quot;height: 500px;&quot;&gt;
+                &lt;div class=&quot;tab-content h-100&quot;&gt;
+                    &lt;div class=&quot;tab-pane fade show active h-100 custom-tab-pane&quot; id=&quot;tab-all&quot; role=&quot;tabpanel&quot;&gt;
+                        &lt;div class=&quot;filter-bar d-flex justify-content-between align-items-center px-4 py-2 border-bottom w-100&quot;&gt;
+                            &lt;div class=&quot;d-flex gap-3&quot;&gt;
+                                &lt;div class=&quot;analytics-icon-small active&quot;&gt;
+                                    &lt;div class=&quot;bar1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar3&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;tag-manager-icon-small&quot;&gt;
+                                    &lt;div class=&quot;diamond bg-primary opacity-50&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;account-filter border rounded px-3 py-1 text-secondary&quot; style=&quot;font-size: 13px; width: 250px;&quot;&gt;
+                                Tất cả tài khoản
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100&quot; style=&quot;font-size: 12px; font-weight: 500;&quot;&gt;
+                            &lt;div style=&quot;flex: 2;&quot;&gt;Tài khoản Analytics&lt;/div&gt;
+                            &lt;div style=&quot;flex: 1;&quot;&gt;Thuộc tính và ứng dụng&lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;table-body d-flex flex-grow-1 overflow-hidden w-100&quot;&gt;
+                            &lt;div class=&quot;account-list custom-scrollbar border-end&quot; style=&quot;flex: 2; overflow-y: auto;&quot;&gt;
+                                &lt;div class=&quot;list-item d-flex justify-content-between align-items-center active&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;div class=&quot;item-name&quot;&gt;Minh Hào&lt;/div&gt;
+                                        &lt;div class=&quot;item-id&quot;&gt;409160974&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;i class=&quot;bi bi-chevron-right text-dark&quot;&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;property-list custom-scrollbar bg-light&quot; style=&quot;flex: 1; overflow-y: auto;&quot;&gt;
+                                &lt;div class=&quot;list-item d-flex justify-content-between align-items-center&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;div class=&quot;item-name&quot;&gt;Minh Hào&lt;/div&gt;
+                                        &lt;div class=&quot;item-id&quot;&gt;555526409&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;d-flex gap-3 text-secondary fs-5&quot;&gt;
+                                        &lt;i class=&quot;bi bi-check2 text-dark&quot;&gt;&lt;/i&gt;
+                                        &lt;i class=&quot;bi bi-star cursor-pointer hover-dark&quot;&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;tab-pane fade h-100 custom-tab-pane&quot; id=&quot;tab-fav&quot; role=&quot;tabpanel&quot;&gt;
+                        &lt;div class=&quot;table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100&quot; style=&quot;font-size: 12px; font-weight: 500;&quot;&gt;
+                            &lt;div style=&quot;flex: 1;&quot;&gt;Thuộc tính và ứng dụng&lt;/div&gt;
+                            &lt;div style=&quot;flex: 1;&quot;&gt;Tài khoản Analytics&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-light w-100&quot;&gt;
+                            &lt;i class=&quot;bi bi-star text-secondary opacity-50 mb-3&quot; style=&quot;font-size: 48px;&quot;&gt;&lt;/i&gt;
+                            &lt;p class=&quot;text-secondary&quot; style=&quot;font-size: 14px;&quot;&gt;Không có mục ưa thích nào&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;tab-pane fade h-100 custom-tab-pane&quot; id=&quot;tab-recent&quot; role=&quot;tabpanel&quot;&gt;
+                        &lt;div class=&quot;table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100&quot; style=&quot;font-size: 12px; font-weight: 500;&quot;&gt;
+                            &lt;div style=&quot;flex: 1;&quot;&gt;Thuộc tính và ứng dụng&lt;/div&gt;
+                            &lt;div style=&quot;flex: 1;&quot;&gt;Tài khoản Analytics&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;property-list custom-scrollbar bg-light flex-grow-1 w-100&quot; style=&quot;overflow-y: auto;&quot;&gt;
+                            &lt;div class=&quot;list-item d-flex align-items-center px-4 hover-item&quot;&gt;
+                                &lt;div style=&quot;flex: 1;&quot;&gt;
+                                    &lt;div class=&quot;item-name text-primary d-flex align-items-center gap-2&quot;&gt;
+                                        &lt;div class=&quot;analytics-icon-micro&quot;&gt;
+                                            &lt;div class=&quot;bar1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar3&quot;&gt;&lt;/div&gt;
+                                        &lt;/div&gt;
+                                        Minh Hào
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;item-id text-muted&quot; style=&quot;margin-left: 20px;&quot;&gt;555526409&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;flex: 1;&quot; class=&quot;d-flex justify-content-between align-items-center&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;div class=&quot;item-name&quot;&gt;Minh Hào&lt;/div&gt;
+                                        &lt;div class=&quot;item-id&quot;&gt;409160974&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;d-flex gap-3 text-secondary fs-5&quot;&gt;
+                                        &lt;i class=&quot;bi bi-star cursor-pointer hover-dark&quot;&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-primary-subtle fw-bold small d-flex align-items-center gap-2" style="color: #60a5fa !important;">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-modal1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-modal1">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.account-selector {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #f1f3f4;
+    border: 1px solid transparent;
+    transition: background-color 0.2s;
+}
+
+.account-selector:hover {
+    background-color: #e8eaed;
+}
+
+.account-breadcrumb {
+    font-size: 12px;
+    color: #5f6368;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.account-breadcrumb i {
+    font-size: 10px;
+}
+
+.account-current {
+    font-size: 20px;
+    color: #3c4043;
+    line-height: 1.2;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.custom-modal-dialog {
+    max-width: 900px;
+}
+
+.custom-modal-content {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-tab-pane {
+    display: none;
+    flex-direction: column;
+}
+
+.custom-tab-pane.active {
+    display: flex !important;
+}
+
+.custom-tabs {
+    gap: 16px;
+    padding-left: 16px;
+}
+
+.custom-tabs .nav-link {
+    border: none;
+    color: #5f6368;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px 8px;
+    position: relative;
+    background: transparent;
+}
+
+.custom-tabs .nav-link:hover {
+    color: #1a73e8;
+    border: none;
+}
+
+.custom-tabs .nav-link.active {
+    color: #1a73e8;
+    background: transparent;
+    border: none;
+}
+
+.custom-tabs .nav-link.active::after {
+    content: &#039;&#039;;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #1a73e8;
+    border-radius: 3px 3px 0 0;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    height: 40px;
+    width: 300px;
+    padding: 0 16px;
+    transition: box-shadow 0.2s;
+}
+
+.search-box:focus-within {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.search-icon {
+    font-size: 16px;
+    color: #5f6368;
+    margin-right: 12px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    color: #202124;
+    outline: none;
+}
+
+.platform-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding-right: 16px;
+}
+
+.platform-link:hover {
+    text-decoration: underline;
+}
+
+.analytics-icon-small {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    width: 24px;
+    height: 24px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.analytics-icon-small.active {
+    opacity: 1;
+}
+
+.analytics-icon-small div {
+    width: 5px;
+    border-radius: 1px 1px 0 0;
+}
+.analytics-icon-small .bar1 { height: 10px; background-color: #fbbc04; }
+.analytics-icon-small .bar2 { height: 15px; background-color: #f9ab00; }
+.analytics-icon-small .bar3 { height: 20px; background-color: #f29900; }
+
+.tag-manager-icon-small {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.diamond {
+    width: 14px;
+    height: 14px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
+.analytics-icon-micro {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5px;
+    width: 12px;
+    height: 12px;
+}
+.analytics-icon-micro div {
+    width: 3px;
+    border-radius: 1px 1px 0 0;
+}
+.analytics-icon-micro .bar1 { height: 6px; background-color: #fbbc04; }
+.analytics-icon-micro .bar2 { height: 9px; background-color: #f9ab00; }
+.analytics-icon-micro .bar3 { height: 12px; background-color: #f29900; }
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #dadce0;
+    border-radius: 4px;
+}
+
+.list-item {
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.hover-item:hover, .account-list .list-item:hover {
+    background-color: #f8f9fa !important;
+}
+
+.account-list .list-item.active {
+    background-color: #f1f3f4;
+}
+
+.property-list .list-item:hover {
+    background-color: #e8eaed;
+}
+
+.item-name {
+    font-size: 14px;
+    color: #202124;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+.item-id {
+    font-size: 12px;
+    color: #5f6368;
+}
+
+.hover-dark:hover {
+    color: #202124 !important;
+}</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </main>
         </div>
@@ -4717,6 +6768,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="testjs.js"></script>
     <script src="sidebar1.js"></script>
+    <script src="sidebar2.js"></script>
     <script src="popover1.js"></script>
     <script src="offcanvas2.js"></script>
     <script src="offcanvas3.js"></script>

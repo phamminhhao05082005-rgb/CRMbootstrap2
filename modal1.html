@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Selector Modal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="modal1.css">
+</head>
+<body class="bg-light p-5">
+
+<div class="account-selector cursor-pointer" data-bs-toggle="modal" data-bs-target="#accountModal">
+    <div class="account-breadcrumb">
+        Tất cả tài khoản <i class="bi bi-chevron-right"></i> Minh Hào
+    </div>
+    <div class="account-current">
+        Minh Hào <i class="bi bi-caret-down-fill ms-1" style="font-size: 10px;"></i>
+    </div>
+</div>
+
+<div class="modal fade" id="accountModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+        <div class="modal-content custom-modal-content shadow-lg">
+            
+            <div class="modal-header border-bottom-0 pb-0">
+                <div class="d-flex align-items-center w-100 justify-content-between">
+                    
+                    <ul class="nav nav-tabs custom-tabs border-bottom-0" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab">Tất cả</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-fav" type="button" role="tab">Ưa thích</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-recent" type="button" role="tab">Gần đây</button>
+                        </li>
+                    </ul>
+
+                    <div class="search-box mx-4">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm">
+                    </div>
+
+                    <a href="#" class="platform-link">Truy cập vào Trang chủ Platform</a>
+                </div>
+            </div>
+
+            <div class="modal-body p-0" style="height: 500px;">
+                <div class="tab-content h-100">
+                    <div class="tab-pane fade show active h-100 custom-tab-pane" id="tab-all" role="tabpanel">
+                        <div class="filter-bar d-flex justify-content-between align-items-center px-4 py-2 border-bottom w-100">
+                            <div class="d-flex gap-3">
+                                <div class="analytics-icon-small active">
+                                    <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+                                </div>
+                                <div class="tag-manager-icon-small">
+                                    <div class="diamond bg-primary opacity-50"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="account-filter border rounded px-3 py-1 text-secondary" style="font-size: 13px; width: 250px;">
+                                Tất cả tài khoản
+                            </div>
+                        </div>
+
+                        <div class="table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100" style="font-size: 12px; font-weight: 500;">
+                            <div style="flex: 2;">Tài khoản Analytics</div>
+                            <div style="flex: 1;">Thuộc tính và ứng dụng</div>
+                        </div>
+
+                        <div class="table-body d-flex flex-grow-1 overflow-hidden w-100">
+                            <div class="account-list custom-scrollbar border-end" style="flex: 2; overflow-y: auto;">
+                                <div class="list-item d-flex justify-content-between align-items-center active">
+                                    <div>
+                                        <div class="item-name">Minh Hào</div>
+                                        <div class="item-id">409160974</div>
+                                    </div>
+                                    <i class="bi bi-chevron-right text-dark"></i>
+                                </div>
+                            </div>
+
+                            <div class="property-list custom-scrollbar bg-light" style="flex: 1; overflow-y: auto;">
+                                <div class="list-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="item-name">Minh Hào</div>
+                                        <div class="item-id">555526409</div>
+                                    </div>
+                                    <div class="d-flex gap-3 text-secondary fs-5">
+                                        <i class="bi bi-check2 text-dark"></i>
+                                        <i class="bi bi-star cursor-pointer hover-dark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade h-100 custom-tab-pane" id="tab-fav" role="tabpanel">
+                        <div class="table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100" style="font-size: 12px; font-weight: 500;">
+                            <div style="flex: 1;">Thuộc tính và ứng dụng</div>
+                            <div style="flex: 1;">Tài khoản Analytics</div>
+                        </div>
+                        
+                        <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-light w-100">
+                            <i class="bi bi-star text-secondary opacity-50 mb-3" style="font-size: 48px;"></i>
+                            <p class="text-secondary" style="font-size: 14px;">Không có mục ưa thích nào</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade h-100 custom-tab-pane" id="tab-recent" role="tabpanel">
+                        <div class="table-header d-flex border-bottom px-4 py-2 bg-white text-secondary w-100" style="font-size: 12px; font-weight: 500;">
+                            <div style="flex: 1;">Thuộc tính và ứng dụng</div>
+                            <div style="flex: 1;">Tài khoản Analytics</div>
+                        </div>
+                        
+                        <div class="property-list custom-scrollbar bg-light flex-grow-1 w-100" style="overflow-y: auto;">
+                            <div class="list-item d-flex align-items-center px-4 hover-item">
+                                <div style="flex: 1;">
+                                    <div class="item-name text-primary d-flex align-items-center gap-2">
+                                        <div class="analytics-icon-micro">
+                                            <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+                                        </div>
+                                        Minh Hào
+                                    </div>
+                                    <div class="item-id text-muted" style="margin-left: 20px;">555526409</div>
+                                </div>
+                                <div style="flex: 1;" class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="item-name">Minh Hào</div>
+                                        <div class="item-id">409160974</div>
+                                    </div>
+                                    <div class="d-flex gap-3 text-secondary fs-5">
+                                        <i class="bi bi-star cursor-pointer hover-dark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Sidebar Layout</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="sidebar2.css">
+</head>
+<body>
+
+<div class="layout-container">
+    
+    <aside class="ga-sidebar" id="gaSidebar">
+        
+        <div class="sidebar-clip">
+            <div class="sidebar-inner custom-scrollbar">
+                
+                <div class="p-3 pb-2">
+                    <button class="btn btn-create shadow-sm d-flex align-items-center">
+                        <div class="plus-icon">
+                            <div class="p-top"></div>
+                            <div class="p-bottom"></div>
+                            <div class="p-left"></div>
+                            <div class="p-right"></div>
+                        </div>
+                        <span>Tạo</span>
+                        <i class="bi bi-caret-down-fill ms-2" style="font-size: 10px;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section mt-2">
+                    <a href="#" class="nav-link-item">Tổng quan nhanh về báo cáo</a>
+                    <a href="#" class="nav-link-item active">Tổng quan theo thời gian thực</a>
+                    <a href="#" class="nav-link-item">Trang theo thời gian thực</a>
+                </div>
+
+                <div class="accordion custom-accordion mt-2" id="sidebarAccordion">
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBusiness" aria-expanded="true">
+                                Mục tiêu kinh doanh
+                            </button>
+                        </h2>
+                        <div id="collapseBusiness" class="accordion-collapse collapse show">
+                            <div class="accordion-body p-0 pb-2">
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Tạo khách hàng tiềm năng
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Tăng doanh số
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Tìm hiểu lưu lượng truy cập w...
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Xem mức độ tương tác và tỷ l...
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUser">
+                                Người dùng
+                            </button>
+                        </h2>
+                        <div id="collapseUser" class="accordion-collapse collapse">
+                            <div class="accordion-body p-0 pb-2">
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Thuộc tính người dùng
+                                </a>
+                                <a href="#" class="sub-link-item">
+                                    <i class="bi bi-caret-right-fill sub-icon"></i> Công nghệ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseData">
+                                Nhập dữ liệu
+                            </button>
+                        </h2>
+                        <div id="collapseData" class="accordion-collapse collapse">
+                            <div class="accordion-body p-0 pb-2">
+                                <a href="#" class="sub-link-item">
+                                    Xác thực việc nhập dữ liệu ch...
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-auto border-top p-3 d-flex align-items-center">
+                    <a href="#" class="nav-link-item w-100 d-flex align-items-center gap-3 p-2 rounded" style="margin:0;">
+                        <i class="bi bi-folder2 fs-5"></i> Thư viện
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="toggle-sidebar-btn" id="toggleSidebarBtn">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </button>
+    </aside>
+
+    <main class="main-content">
+        <div class="placeholder-content h-100 w-100 d-flex align-items-center justify-content-center">
+            <div class="text-center text-secondary">
+                <i class="bi bi-map text-secondary opacity-25" style="font-size: 80px;"></i>
+                <h3 class="mt-3 fw-light">Nội dung báo cáo</h3>
+                <p>Khu vực này sẽ tự động mở rộng khi thu gọn Sidebar.</p>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="sidebar2.js"></script>
+</body>
+</html>
