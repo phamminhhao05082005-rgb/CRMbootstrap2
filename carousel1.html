@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Carousel Collection</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="carousel1.css">
+</head>
+<body class="bg-light p-4">
+
+<div class="container-fluid max-w-1200 mx-auto">
+    
+    <div class="d-flex align-items-center gap-2 mb-3">
+        <h2 class="fs-6 fw-medium text-dark m-0">Bộ sưu tập</h2>
+        <i class="bi bi-question-circle text-secondary cursor-pointer" style="font-size: 14px;"></i>
+    </div>
+
+    <div class="carousel-wrapper position-relative">
+        
+        <button class="nav-btn prev-btn shadow-sm" id="prevBtn" disabled>
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <div class="carousel-track-container" id="trackContainer">
+            <div class="carousel-track d-flex gap-3" id="carouselTrack">
+                
+                <div class="collection-card create-card flex-shrink-0 d-flex flex-column align-items-center justify-content-center cursor-pointer">
+                    <div class="plus-icon-wrapper mb-3">
+                        <div class="plus-line vertical bg-danger"></div>
+                        <div class="plus-line horizontal bg-primary"></div>
+                        <div class="plus-line horizontal-right bg-warning"></div>
+                        <div class="plus-line vertical-bottom bg-success"></div>
+                    </div>
+                    <span class="text-secondary" style="font-size: 13px;">Tạo bộ sưu tập mới</span>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Mục tiêu kinh doanh">Mục tiêu kinh doanh</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Mục tiêu ...</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tạo khách hàng tiềm năng</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tăng doanh số</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tìm hiểu lưu lượng truy cập web...</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Xem mức độ tương tác và tỷ lệ giữ...</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Người dùng">Người dùng</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Người dù...</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Thuộc tính người dùng</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Công nghệ</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Nhập dữ liệu">Nhập dữ liệu</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Nhập dữ ...</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Xác thực việc nhập dữ liệu chiến dịch</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Tập hợp báo cáo không có...">Tập hợp báo cáo không có...</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-light text-secondary border rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye-slash"></i> Chưa được xuất bản
+                                </span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye fs-5"></i> Xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">test</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Vòng đời">Vòng đời</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Vòng đời</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Thu nạp</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Mức độ tương tác</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Kiếm tiền</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tỷ lệ giữ chân</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="nav-btn next-btn shadow-sm" id="nextBtn">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="carousel1.js"></script>
+</body>
+</html>

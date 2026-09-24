@@ -750,7 +750,8 @@ body {
    OFFCANVAS PREVIEWS CUSTOM STYLING & PROTECTION
    ========================================================================== */
 #preview-offcanvas1,
-#preview-offcanvas2 {
+#preview-offcanvas2,
+#preview-offcanvas3 {
     background-color: #f8fafc;
     min-height: 200px;
     display: flex;
@@ -814,4 +815,12 @@ body {
 
 .tab-content > .tab-pane.fade.show {
     opacity: 1;
+}
+/* Styling cho Preview Carousel 1 */
+#preview-carousel1 {
+    background-color: #f8fafc;
+    padding: 2rem 2.5rem;
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
 }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Compare Offcanvas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="offcanvas3.css">
+</head>
+<body class="bg-light p-5">
+
+<button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#compareOffcanvas">
+    Mở bảng so sánh
+</button>
+
+<div class="offcanvas offcanvas-top custom-compare-offcanvas shadow-lg" tabindex="-1" id="compareOffcanvas">
+    
+    <div class="offcanvas-header custom-header flex-column align-items-stretch p-0 border-bottom">
+        
+        <div class="d-flex align-items-center justify-content-between p-3">
+            <div class="d-flex align-items-center gap-3">
+                <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+                <span class="fs-5 text-dark" style="font-weight: 400;">Áp dụng một phép so sánh</span>
+            </div>
+
+            <div class="search-box-wrapper mx-4 flex-grow-1" style="max-width: 600px;">
+                <div class="search-box">
+                    <i class="bi bi-search search-icon"></i>
+                    <input type="text" class="search-input" id="tableSearchInput" placeholder="Tìm kiếm">
+                </div>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-primary d-flex align-items-center gap-2 custom-btn-outline">
+                    <i class="bi bi-plus-lg"></i> Tạo mới
+                </button>
+                <button class="btn btn-primary px-4 custom-btn-primary">Áp dụng</button>
+            </div>
+        </div>
+
+        <div class="selected-pills-container px-4 pb-3 d-flex flex-wrap gap-2" id="selectedPillsArea">
+            
+        </div>
+
+    </div>
+
+    <div class="offcanvas-body p-0 d-flex flex-column custom-scrollbar">
+        
+        <div class="table-responsive flex-grow-1">
+            <table class="table custom-table align-middle mb-0" id="compareTable">
+                <thead>
+                    <tr>
+                        <th style="width: 48px;" class="text-center"></th>
+                        <th style="width: 250px;">Tên</th>
+                        <th style="width: 350px;">Nội dung mô tả</th>
+                        <th>Tóm tắt</th>
+                        <th style="width: 48px;"></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Tất cả người dùng" data-type="T">
+                        </td>
+                        <td class="row-name">Tất cả người dùng</td>
+                        <td class="row-desc">Bao gồm tất cả dữ liệu của bạn.</td>
+                        <td class="row-summary"></td>
+                        <td></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập trực tiếp" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập trực tiếp</td>
+                        <td class="row-desc">Các phiên được thu nạp trực tiếp.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Direct'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng tự nhiên" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng tự nhiên</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua kênh tự nhiên.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Organic Search|Organic Video|Organic Social|Organic Shopping'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập có trả phí" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập có trả phí</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua kênh có tính phí.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Paid Shopping|Paid Search|Paid Social|Paid Other|Paid Video|Display|Cross-network|Audio'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập thông qua email" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập thông qua email, tin nhắn SMS và thông báo đẩy</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua email, tin nhắn SMS hoặc thông báo đẩy.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Email|SMS|Mobile Push Notifications'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập thông qua lượt giới thiệu" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập thông qua lượt giới thiệu và đơn vị liên kết</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua lượt giới thiệu hoặc đơn vị liên kết.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Referral|Affiliates'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập trên thiết bị di động" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập trên thiết bị di động</td>
+                        <td class="row-desc">Lưu lượng truy cập trên điện thoại di động.</td>
+                        <td class="row-summary text-muted">Danh mục thiết bị khớp chính xác 'mobile'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập vào web" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập vào web</td>
+                        <td class="row-desc">Lưu lượng truy cập trên máy tính.</td>
+                        <td class="row-summary text-muted">Danh mục thiết bị khớp chính xác 'desktop'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập trên máy tính bảng" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập trên máy tính bảng</td>
+                        <td class="row-desc">Lưu lượng truy cập trên máy tính bảng.</td>
+                        <td class="row-summary text-muted">Danh mục thiết bị khớp chính xác 'tablet'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="offcanvas-footer border-top p-3 d-flex justify-content-end align-items-center bg-white gap-4 mt-auto">
+            
+            <div class="d-flex align-items-center gap-3">
+                <span class="text-secondary" style="font-size: 13px;">Số mục trên mỗi trang:</span>
+                <select class="form-select form-select-sm custom-select" style="width: 70px;">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+
+            <div class="text-secondary" style="font-size: 13px;" id="paginationText">1 – 9/9</div>
+
+            <div class="d-flex gap-1">
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-bar-left"></i></button>
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-left"></i></button>
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-right"></i></button>
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-bar-right"></i></button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="offcanvas3.js"></script>
+</body>
+</html>

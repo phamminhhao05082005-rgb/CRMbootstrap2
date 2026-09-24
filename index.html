@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="card1.css">
     <link rel="stylesheet" href="offcanvas1.css">
     <link rel="stylesheet" href="offcanvas2.css">
+    <link rel="stylesheet" href="offcanvas3.css">
+    <link rel="stylesheet" href="carousel1.css">
     <link rel="stylesheet" href="testcss.css">
 
     <style>
@@ -99,6 +101,15 @@
                         <span class="d-flex align-items-center gap-2">
                             <i class="bi bi-layout-sidebar-reverse" style="color: #10b981;"></i>
                             <span>Offcanvas</span>
+                        </span>
+                    </button>
+
+                    <button class="nav-link d-flex align-items-center justify-content-between mb-1"
+                        id="tab-carousel-btn" data-bs-toggle="pill" data-bs-target="#tab-carousel" type="button"
+                        role="tab" aria-controls="tab-carousel" aria-selected="false">
+                        <span class="d-flex align-items-center gap-2">
+                            <i class="bi bi-images" style="color: #06b6d4;"></i>
+                            <span>Carousel</span>
                         </span>
                     </button>
                 </div>
@@ -2216,6 +2227,7 @@
                             <div class="d-flex flex-wrap gap-2">
                                 <a href="#offcanvas-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Insights Offcanvas</a>
                                 <a href="#offcanvas-mau-2" class="btn btn-sm btn-outline-secondary">Mẫu 2: Notes Offcanvas</a>
+                                <a href="#offcanvas-mau-3" class="btn btn-sm btn-outline-secondary">Mẫu 3: Compare Offcanvas</a>
                             </div>
                         </div>
 
@@ -3160,6 +3172,1541 @@
                                 </div>
                             </div>
                         </section>
+                        <section id="offcanvas-mau-3" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 3</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Compare Offcanvas (Bảng so sánh dữ liệu trượt từ trên xuống)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-layout-sidebar-reverse me-1"></i> Top Offcanvas Comparison
+                                    </span>
+                                </div>
+                                <div class="p-5 preview-container d-flex justify-content-center align-items-center" id="preview-offcanvas3" style="background-color: #f8fafc; min-height: 240px; border-radius: 8px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Compare Offcanvas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="offcanvas3.css">
+</head>
+<body class="bg-light p-5">
+
+<button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#compareOffcanvas">
+    Mở bảng so sánh
+</button>
+
+<div class="offcanvas offcanvas-top custom-compare-offcanvas shadow-lg" tabindex="-1" id="compareOffcanvas">
+    
+    <div class="offcanvas-header custom-header flex-column align-items-stretch p-0 border-bottom">
+        
+        <div class="d-flex align-items-center justify-content-between p-3">
+            <div class="d-flex align-items-center gap-3">
+                <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+                <span class="fs-5 text-dark" style="font-weight: 400;">Áp dụng một phép so sánh</span>
+            </div>
+
+            <div class="search-box-wrapper mx-4 flex-grow-1" style="max-width: 600px;">
+                <div class="search-box">
+                    <i class="bi bi-search search-icon"></i>
+                    <input type="text" class="search-input" id="tableSearchInput" placeholder="Tìm kiếm">
+                </div>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-primary d-flex align-items-center gap-2 custom-btn-outline">
+                    <i class="bi bi-plus-lg"></i> Tạo mới
+                </button>
+                <button class="btn btn-primary px-4 custom-btn-primary">Áp dụng</button>
+            </div>
+        </div>
+
+        <div class="selected-pills-container px-4 pb-3 d-flex flex-wrap gap-2" id="selectedPillsArea">
+            
+        </div>
+
+    </div>
+
+    <div class="offcanvas-body p-0 d-flex flex-column custom-scrollbar">
+        
+        <div class="table-responsive flex-grow-1">
+            <table class="table custom-table align-middle mb-0" id="compareTable">
+                <thead>
+                    <tr>
+                        <th style="width: 48px;" class="text-center"></th>
+                        <th style="width: 250px;">Tên</th>
+                        <th style="width: 350px;">Nội dung mô tả</th>
+                        <th>Tóm tắt</th>
+                        <th style="width: 48px;"></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Tất cả người dùng" data-type="T">
+                        </td>
+                        <td class="row-name">Tất cả người dùng</td>
+                        <td class="row-desc">Bao gồm tất cả dữ liệu của bạn.</td>
+                        <td class="row-summary"></td>
+                        <td></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập trực tiếp" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập trực tiếp</td>
+                        <td class="row-desc">Các phiên được thu nạp trực tiếp.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Direct'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng tự nhiên" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng tự nhiên</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua kênh tự nhiên.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Organic Search|Organic Video|Organic Social|Organic Shopping'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập có trả phí" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập có trả phí</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua kênh có tính phí.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Paid Shopping|Paid Search|Paid Social|Paid Other|Paid Video|Display|Cross-network|Audio'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập thông qua email" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập thông qua email, tin nhắn SMS và thông báo đẩy</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua email, tin nhắn SMS hoặc thông báo đẩy.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Email|SMS|Mobile Push Notifications'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập thông qua lượt giới thiệu" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập thông qua lượt giới thiệu và đơn vị liên kết</td>
+                        <td class="row-desc">Các phiên được thu nạp thông qua lượt giới thiệu hoặc đơn vị liên kết.</td>
+                        <td class="row-summary text-muted">Nhóm kênh mặc định của phiên hoạt động khớp chính xác 'Referral|Affiliates'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập trên thiết bị di động" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập trên thiết bị di động</td>
+                        <td class="row-desc">Lưu lượng truy cập trên điện thoại di động.</td>
+                        <td class="row-summary text-muted">Danh mục thiết bị khớp chính xác 'mobile'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập vào web" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập vào web</td>
+                        <td class="row-desc">Lưu lượng truy cập trên máy tính.</td>
+                        <td class="row-summary text-muted">Danh mục thiết bị khớp chính xác 'desktop'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                    <tr class="table-row">
+                        <td class="text-center">
+                            <input class="form-check-input custom-checkbox" type="checkbox" value="Lưu lượng truy cập trên máy tính bảng" data-type="L">
+                        </td>
+                        <td class="row-name">Lưu lượng truy cập trên máy tính bảng</td>
+                        <td class="row-desc">Lưu lượng truy cập trên máy tính bảng.</td>
+                        <td class="row-summary text-muted">Danh mục thiết bị khớp chính xác 'tablet'</td>
+                        <td class="text-center"><i class="bi bi-three-dots-vertical text-secondary cursor-pointer"></i></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="offcanvas-footer border-top p-3 d-flex justify-content-end align-items-center bg-white gap-4 mt-auto">
+            
+            <div class="d-flex align-items-center gap-3">
+                <span class="text-secondary" style="font-size: 13px;">Số mục trên mỗi trang:</span>
+                <select class="form-select form-select-sm custom-select" style="width: 70px;">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+
+            <div class="text-secondary" style="font-size: 13px;" id="paginationText">1 – 9/9</div>
+
+            <div class="d-flex gap-1">
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-bar-left"></i></button>
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-left"></i></button>
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-right"></i></button>
+                <button class="btn btn-sm btn-icon text-secondary" disabled><i class="bi bi-chevron-bar-right"></i></button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="offcanvas3.js"></script>
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-offcanvas3', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-offcanvas3">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Offcanvas 3 --&gt;
+&lt;link rel="stylesheet" href="offcanvas3.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- File JS Offcanvas 3 --&gt;
+&lt;script src="offcanvas3.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-offcanvas3', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-offcanvas3">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Analytics Compare Offcanvas&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;offcanvas3.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-5&quot;&gt;
+
+&lt;button class=&quot;btn btn-outline-primary&quot; type=&quot;button&quot; data-bs-toggle=&quot;offcanvas&quot; data-bs-target=&quot;#compareOffcanvas&quot;&gt;
+    Mở bảng so sánh
+&lt;/button&gt;
+
+&lt;div class=&quot;offcanvas offcanvas-top custom-compare-offcanvas shadow-lg&quot; tabindex=&quot;-1&quot; id=&quot;compareOffcanvas&quot;&gt;
+    
+    &lt;div class=&quot;offcanvas-header custom-header flex-column align-items-stretch p-0 border-bottom&quot;&gt;
+        
+        &lt;div class=&quot;d-flex align-items-center justify-content-between p-3&quot;&gt;
+            &lt;div class=&quot;d-flex align-items-center gap-3&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn-close-custom&quot; data-bs-dismiss=&quot;offcanvas&quot;&gt;
+                    &lt;i class=&quot;bi bi-x-lg&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;span class=&quot;fs-5 text-dark&quot; style=&quot;font-weight: 400;&quot;&gt;Áp dụng một phép so sánh&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;search-box-wrapper mx-4 flex-grow-1&quot; style=&quot;max-width: 600px;&quot;&gt;
+                &lt;div class=&quot;search-box&quot;&gt;
+                    &lt;i class=&quot;bi bi-search search-icon&quot;&gt;&lt;/i&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;search-input&quot; id=&quot;tableSearchInput&quot; placeholder=&quot;Tìm kiếm&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;d-flex gap-2&quot;&gt;
+                &lt;button class=&quot;btn btn-outline-primary d-flex align-items-center gap-2 custom-btn-outline&quot;&gt;
+                    &lt;i class=&quot;bi bi-plus-lg&quot;&gt;&lt;/i&gt; Tạo mới
+                &lt;/button&gt;
+                &lt;button class=&quot;btn btn-primary px-4 custom-btn-primary&quot;&gt;Áp dụng&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;selected-pills-container px-4 pb-3 d-flex flex-wrap gap-2&quot; id=&quot;selectedPillsArea&quot;&gt;
+            
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class=&quot;offcanvas-body p-0 d-flex flex-column custom-scrollbar&quot;&gt;
+        
+        &lt;div class=&quot;table-responsive flex-grow-1&quot;&gt;
+            &lt;table class=&quot;table custom-table align-middle mb-0&quot; id=&quot;compareTable&quot;&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th style=&quot;width: 48px;&quot; class=&quot;text-center&quot;&gt;&lt;/th&gt;
+                        &lt;th style=&quot;width: 250px;&quot;&gt;Tên&lt;/th&gt;
+                        &lt;th style=&quot;width: 350px;&quot;&gt;Nội dung mô tả&lt;/th&gt;
+                        &lt;th&gt;Tóm tắt&lt;/th&gt;
+                        &lt;th style=&quot;width: 48px;&quot;&gt;&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody id=&quot;tableBody&quot;&gt;
+                    
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Tất cả người dùng&quot; data-type=&quot;T&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Tất cả người dùng&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Bao gồm tất cả dữ liệu của bạn.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary&quot;&gt;&lt;/td&gt;
+                        &lt;td&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng truy cập trực tiếp&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng truy cập trực tiếp&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Các phiên được thu nạp trực tiếp.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Nhóm kênh mặc định của phiên hoạt động khớp chính xác &#039;Direct&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng tự nhiên&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng tự nhiên&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Các phiên được thu nạp thông qua kênh tự nhiên.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Nhóm kênh mặc định của phiên hoạt động khớp chính xác &#039;Organic Search|Organic Video|Organic Social|Organic Shopping&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng truy cập có trả phí&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng truy cập có trả phí&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Các phiên được thu nạp thông qua kênh có tính phí.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Nhóm kênh mặc định của phiên hoạt động khớp chính xác &#039;Paid Shopping|Paid Search|Paid Social|Paid Other|Paid Video|Display|Cross-network|Audio&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng truy cập thông qua email&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng truy cập thông qua email, tin nhắn SMS và thông báo đẩy&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Các phiên được thu nạp thông qua email, tin nhắn SMS hoặc thông báo đẩy.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Nhóm kênh mặc định của phiên hoạt động khớp chính xác &#039;Email|SMS|Mobile Push Notifications&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng truy cập thông qua lượt giới thiệu&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng truy cập thông qua lượt giới thiệu và đơn vị liên kết&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Các phiên được thu nạp thông qua lượt giới thiệu hoặc đơn vị liên kết.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Nhóm kênh mặc định của phiên hoạt động khớp chính xác &#039;Referral|Affiliates&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng truy cập trên thiết bị di động&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng truy cập trên thiết bị di động&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Lưu lượng truy cập trên điện thoại di động.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Danh mục thiết bị khớp chính xác &#039;mobile&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng truy cập vào web&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng truy cập vào web&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Lưu lượng truy cập trên máy tính.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Danh mục thiết bị khớp chính xác &#039;desktop&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr class=&quot;table-row&quot;&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                            &lt;input class=&quot;form-check-input custom-checkbox&quot; type=&quot;checkbox&quot; value=&quot;Lưu lượng truy cập trên máy tính bảng&quot; data-type=&quot;L&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;row-name&quot;&gt;Lưu lượng truy cập trên máy tính bảng&lt;/td&gt;
+                        &lt;td class=&quot;row-desc&quot;&gt;Lưu lượng truy cập trên máy tính bảng.&lt;/td&gt;
+                        &lt;td class=&quot;row-summary text-muted&quot;&gt;Danh mục thiết bị khớp chính xác &#039;tablet&#039;&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;&lt;i class=&quot;bi bi-three-dots-vertical text-secondary cursor-pointer&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;offcanvas-footer border-top p-3 d-flex justify-content-end align-items-center bg-white gap-4 mt-auto&quot;&gt;
+            
+            &lt;div class=&quot;d-flex align-items-center gap-3&quot;&gt;
+                &lt;span class=&quot;text-secondary&quot; style=&quot;font-size: 13px;&quot;&gt;Số mục trên mỗi trang:&lt;/span&gt;
+                &lt;select class=&quot;form-select form-select-sm custom-select&quot; style=&quot;width: 70px;&quot;&gt;
+                    &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+                    &lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+                    &lt;option value=&quot;50&quot;&gt;50&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;text-secondary&quot; style=&quot;font-size: 13px;&quot; id=&quot;paginationText&quot;&gt;1 – 9/9&lt;/div&gt;
+
+            &lt;div class=&quot;d-flex gap-1&quot;&gt;
+                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; disabled&gt;&lt;i class=&quot;bi bi-chevron-bar-left&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; disabled&gt;&lt;i class=&quot;bi bi-chevron-left&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; disabled&gt;&lt;i class=&quot;bi bi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; disabled&gt;&lt;i class=&quot;bi bi-chevron-bar-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;offcanvas3.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-offcanvas3', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-offcanvas3">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.custom-compare-offcanvas {
+    height: 90vh !important;
+    background-color: #ffffff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #dadce0;
+    border-radius: 4px;
+}
+
+.btn-close-custom {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f6368;
+    transition: background-color 0.2s;
+    font-size: 20px;
+}
+.btn-close-custom:hover {
+    background-color: #f1f3f4;
+}
+
+.custom-btn-outline {
+    color: #1a73e8;
+    border-color: #dadce0;
+    font-weight: 500;
+}
+.custom-btn-outline:hover {
+    background-color: #f8f9fa;
+    border-color: #dadce0;
+    color: #174ea6;
+}
+
+.custom-btn-primary {
+    background-color: #4285f4;
+    border-color: #4285f4;
+    font-weight: 500;
+}
+.custom-btn-primary:hover {
+    background-color: #3b78e7;
+    border-color: #3b78e7;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.search-box:focus-within {
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border-color: #dadce0;
+}
+.search-icon {
+    font-size: 16px;
+    color: #5f6368;
+    margin-right: 12px;
+}
+.search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    color: #202124;
+    outline: none;
+}
+
+.filter-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1f3f4;
+    border: 1px solid #dadce0;
+    border-radius: 16px;
+    padding: 4px 10px;
+    font-size: 13px;
+    color: #3c4043;
+}
+
+.pill-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.pill-icon.blue { background-color: #1a73e8; }
+.pill-icon.gray { background-color: #9aa0a6; }
+
+.pill-close {
+    margin-left: 6px;
+    cursor: pointer;
+    color: #5f6368;
+    font-size: 14px;
+}
+.pill-close:hover {
+    color: #202124;
+}
+
+.custom-table th {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3c4043;
+    padding: 12px 16px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.custom-table td {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #3c4043;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.table-row.selected {
+    background-color: #e8f0fe;
+}
+
+.table-row:hover:not(.selected) {
+    background-color: #f8f9fa;
+}
+
+.row-name { font-weight: 400; color: #202124; }
+.row-desc { color: #3c4043; }
+.row-summary { font-size: 12px; line-height: 1.4; }
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.custom-checkbox:checked {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+}
+
+.cursor-pointer { cursor: pointer; }
+
+.custom-select {
+    border-color: #dadce0;
+    color: #3c4043;
+    font-size: 13px;
+    box-shadow: none !important;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-icon:not(:disabled):hover {
+    background-color: #f1f3f4;
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-js fs-5"></i> NỘI DUNG JS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-js-offcanvas3', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy JS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-js-offcanvas3">document.addEventListener(&#039;DOMContentLoaded&#039;, () =&gt; {
+    
+    const searchInput = document.getElementById(&#039;tableSearchInput&#039;);
+    const tableRows = document.querySelectorAll(&#039;.table-row&#039;);
+    const checkboxes = document.querySelectorAll(&#039;.custom-checkbox&#039;);
+    const pillsArea = document.getElementById(&#039;selectedPillsArea&#039;);
+
+    let selectedItems = [];
+
+    searchInput.addEventListener(&#039;input&#039;, (e) =&gt; {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        tableRows.forEach(row =&gt; {
+            const rowName = row.querySelector(&#039;.row-name&#039;).textContent.toLowerCase();
+            const rowDesc = row.querySelector(&#039;.row-desc&#039;).textContent.toLowerCase();
+            
+            if (rowName.includes(searchTerm) || rowDesc.includes(searchTerm)) {
+                row.style.display = &#039;&#039;; 
+            } else {
+                row.style.display = &#039;none&#039;; 
+            }
+        });
+    });
+
+    const renderPills = () =&gt; {
+        pillsArea.innerHTML = &#039;&#039;;
+        
+        selectedItems.forEach((item) =&gt; {
+            const colorClass = item.type === &#039;T&#039; ? &#039;blue&#039; : &#039;gray&#039;;
+            
+            const pillHtml = `
+                &lt;div class=&quot;filter-pill&quot; data-value=&quot;${item.value}&quot;&gt;
+                    &lt;div class=&quot;pill-icon ${colorClass}&quot;&gt;${item.type}&lt;/div&gt;
+                    &lt;span&gt;${item.value}&lt;/span&gt;
+                    &lt;i class=&quot;bi bi-x pill-close ms-2&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            `;
+            pillsArea.insertAdjacentHTML(&#039;beforeend&#039;, pillHtml);
+        });
+
+        const closeBtns = pillsArea.querySelectorAll(&#039;.pill-close&#039;);
+        closeBtns.forEach(btn =&gt; {
+            btn.addEventListener(&#039;click&#039;, (e) =&gt; {
+                const pillElement = e.target.closest(&#039;.filter-pill&#039;);
+                const valToRem = pillElement.getAttribute(&#039;data-value&#039;);
+                
+                checkboxes.forEach(cb =&gt; {
+                    if (cb.value === valToRem) {
+                        cb.checked = false;
+                        cb.closest(&#039;.table-row&#039;).classList.remove(&#039;selected&#039;);
+                    }
+                });
+
+                selectedItems = selectedItems.filter(i =&gt; i.value !== valToRem);
+                renderPills();
+            });
+        });
+    };
+
+    checkboxes.forEach(cb =&gt; {
+        cb.addEventListener(&#039;change&#039;, (e) =&gt; {
+            const val = e.target.value;
+            const type = e.target.getAttribute(&#039;data-type&#039;);
+            const row = e.target.closest(&#039;.table-row&#039;);
+
+            if (e.target.checked) {
+                
+                selectedItems.push({ value: val, type: type });
+                row.classList.add(&#039;selected&#039;);
+            } else {
+                
+                selectedItems = selectedItems.filter(i =&gt; i.value !== val);
+                row.classList.remove(&#039;selected&#039;);
+            }
+
+            renderPills();
+        });
+    });
+
+    checkboxes[0].checked = true;
+    checkboxes[1].checked = true;
+    checkboxes[5].checked = true;
+    
+    checkboxes[0].dispatchEvent(new Event(&#039;change&#039;));
+    checkboxes[1].dispatchEvent(new Event(&#039;change&#039;));
+    checkboxes[5].dispatchEvent(new Event(&#039;change&#039;));
+
+});</code></pre>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tab-pane fade" id="tab-carousel" role="tabpanel" aria-labelledby="tab-carousel-btn">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom gap-2">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">7. Carousel Components</h1>
+                                <p class="text-muted mb-0 small">Băng chuyền hiển thị danh sách thẻ (Collection Cards Carousel) có nút điều hướng cuộn ngang mượt mà</p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#carousel-mau-1" class="btn btn-sm btn-outline-secondary">Mẫu 1: Analytics Carousel Collection</a>
+                            </div>
+                        </div>
+
+                        <section id="carousel-mau-1" class="mb-5 pt-2">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-primary px-2 py-1 rounded-pill">Mẫu 1</span>
+                                <h2 class="h5 fw-bold mb-0">Analytics Carousel Collection (Băng chuyền bộ sưu tập thẻ kèm menu thao tác)</h2>
+                            </div>
+
+                            <div class="preview-card mb-4 bg-white">
+                                <div class="card-header bg-white py-3 px-3 d-flex align-items-center justify-content-between border-bottom">
+                                    <span class="fw-bold text-dark d-flex align-items-center gap-2">
+                                        <i class="bi bi-eye text-primary"></i> Giao diện xem trước
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                                        <i class="bi bi-images me-1"></i> Interactive Collection Carousel
+                                    </span>
+                                </div>
+                                <div class="p-4 preview-container" id="preview-carousel1" style="background-color: #f8fafc; border-radius: 8px; overflow: hidden;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Carousel Collection</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="carousel1.css">
+</head>
+<body class="bg-light p-4">
+
+<div class="container-fluid max-w-1200 mx-auto">
+    
+    <div class="d-flex align-items-center gap-2 mb-3">
+        <h2 class="fs-6 fw-medium text-dark m-0">Bộ sưu tập</h2>
+        <i class="bi bi-question-circle text-secondary cursor-pointer" style="font-size: 14px;"></i>
+    </div>
+
+    <div class="carousel-wrapper position-relative">
+        
+        <button class="nav-btn prev-btn shadow-sm" id="prevBtn" disabled>
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <div class="carousel-track-container" id="trackContainer">
+            <div class="carousel-track d-flex gap-3" id="carouselTrack">
+                
+                <div class="collection-card create-card flex-shrink-0 d-flex flex-column align-items-center justify-content-center cursor-pointer">
+                    <div class="plus-icon-wrapper mb-3">
+                        <div class="plus-line vertical bg-danger"></div>
+                        <div class="plus-line horizontal bg-primary"></div>
+                        <div class="plus-line horizontal-right bg-warning"></div>
+                        <div class="plus-line vertical-bottom bg-success"></div>
+                    </div>
+                    <span class="text-secondary" style="font-size: 13px;">Tạo bộ sưu tập mới</span>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Mục tiêu kinh doanh">Mục tiêu kinh doanh</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Mục tiêu ...</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tạo khách hàng tiềm năng</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tăng doanh số</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tìm hiểu lưu lượng truy cập web...</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Xem mức độ tương tác và tỷ lệ giữ...</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Người dùng">Người dùng</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Người dù...</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Thuộc tính người dùng</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Công nghệ</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Nhập dữ liệu">Nhập dữ liệu</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Nhập dữ ...</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Xác thực việc nhập dữ liệu chiến dịch</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Tập hợp báo cáo không có...">Tập hợp báo cáo không có...</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-light text-secondary border rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye-slash"></i> Chưa được xuất bản
+                                </span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye fs-5"></i> Xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">test</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="collection-card content-card flex-shrink-0 d-flex flex-column bg-white">
+                    <div class="card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2">
+                        <div class="header-left flex-grow-1" style="min-width: 0;">
+                            <h3 class="card-title text-truncate" title="Vòng đời">Vòng đời</h3>
+                            <div class="d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0" style="font-size: 11px;">
+                                    <i class="bi bi-eye"></i> Đã xuất bản cho tất cả
+                                </span>
+                                <span class="text-muted flex-shrink-0" style="font-size: 10px;">•</span>
+                                <span class="text-secondary text-truncate flex-grow-1" style="font-size: 12px;">Vòng đời</span>
+                            </div>
+                        </div>
+                        <div class="header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3">
+                            <button class="btn btn-sm btn-icon text-secondary"><i class="bi bi-info-circle"></i></button>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-icon text-secondary" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu shadow-sm custom-dropdown">
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-eye-slash fs-5"></i> Huỷ xuất bản</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Chỉnh sửa</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-files fs-5"></i> Tạo một bản sao</a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-pencil fs-5"></i> Đổi tên</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="bi bi-trash3 fs-5"></i> Xoá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 flex-grow-1 position-relative z-1">
+                        <ul class="list-unstyled m-0 d-flex flex-column gap-1">
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Thu nạp</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Mức độ tương tác</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Kiếm tiền</span></li>
+                            <li class="d-flex align-items-start gap-2 text-dark"><i class="bi bi-folder2 text-secondary"></i> <span class="text-truncate" style="font-size: 13px;">Tỷ lệ giữ chân</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer p-3 pt-0 border-0 bg-white position-relative z-1">
+                        <i class="bi bi-building text-secondary fs-5"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="nav-btn next-btn shadow-sm" id="nextBtn">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="carousel1.js"></script>
+</body>
+</html>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-white-50 fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-box-arrow-in-down fs-5"></i> THƯ VIỆN CẦN NHÚNG
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('dep-code-carousel1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy Link
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="dep-code-carousel1">&lt;!-- Bootstrap 5 CSS &amp; Bootstrap Icons --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;!-- File CSS Carousel 1 --&gt;
+&lt;link rel="stylesheet" href="carousel1.css"&gt;
+
+&lt;!-- Bootstrap 5 JS Bundle --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- File JS Carousel 1 --&gt;
+&lt;script src="carousel1.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-html fs-5"></i> NỘI DUNG HTML
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-html-carousel1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy HTML
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-html-carousel1">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Analytics Carousel Collection&lt;/title&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;carousel1.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-light p-4&quot;&gt;
+
+&lt;div class=&quot;container-fluid max-w-1200 mx-auto&quot;&gt;
+    
+    &lt;div class=&quot;d-flex align-items-center gap-2 mb-3&quot;&gt;
+        &lt;h2 class=&quot;fs-6 fw-medium text-dark m-0&quot;&gt;Bộ sưu tập&lt;/h2&gt;
+        &lt;i class=&quot;bi bi-question-circle text-secondary cursor-pointer&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;/i&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;carousel-wrapper position-relative&quot;&gt;
+        
+        &lt;button class=&quot;nav-btn prev-btn shadow-sm&quot; id=&quot;prevBtn&quot; disabled&gt;
+            &lt;i class=&quot;bi bi-chevron-left&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+
+        &lt;div class=&quot;carousel-track-container&quot; id=&quot;trackContainer&quot;&gt;
+            &lt;div class=&quot;carousel-track d-flex gap-3&quot; id=&quot;carouselTrack&quot;&gt;
+                
+                &lt;div class=&quot;collection-card create-card flex-shrink-0 d-flex flex-column align-items-center justify-content-center cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;plus-icon-wrapper mb-3&quot;&gt;
+                        &lt;div class=&quot;plus-line vertical bg-danger&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;plus-line horizontal bg-primary&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;plus-line horizontal-right bg-warning&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;plus-line vertical-bottom bg-success&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;span class=&quot;text-secondary&quot; style=&quot;font-size: 13px;&quot;&gt;Tạo bộ sưu tập mới&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;collection-card content-card flex-shrink-0 d-flex flex-column bg-white&quot;&gt;
+                    &lt;div class=&quot;card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2&quot;&gt;
+                        &lt;div class=&quot;header-left flex-grow-1&quot; style=&quot;min-width: 0;&quot;&gt;
+                            &lt;h3 class=&quot;card-title text-truncate&quot; title=&quot;Mục tiêu kinh doanh&quot;&gt;Mục tiêu kinh doanh&lt;/h3&gt;
+                            &lt;div class=&quot;d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden&quot;&gt;
+                                &lt;span class=&quot;badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0&quot; style=&quot;font-size: 11px;&quot;&gt;
+                                    &lt;i class=&quot;bi bi-eye&quot;&gt;&lt;/i&gt; Đã xuất bản cho tất cả
+                                &lt;/span&gt;
+                                &lt;span class=&quot;text-muted flex-shrink-0&quot; style=&quot;font-size: 10px;&quot;&gt;•&lt;/span&gt;
+                                &lt;span class=&quot;text-secondary text-truncate flex-grow-1&quot; style=&quot;font-size: 12px;&quot;&gt;Mục tiêu ...&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3&quot;&gt;
+                            &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot;&gt;&lt;i class=&quot;bi bi-info-circle&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;div class=&quot;dropdown&quot;&gt;
+                                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot; data-bs-offset=&quot;0,5&quot;&gt;
+                                    &lt;i class=&quot;bi bi-three-dots-vertical&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;ul class=&quot;dropdown-menu shadow-sm custom-dropdown&quot;&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-eye-slash fs-5&quot;&gt;&lt;/i&gt; Huỷ xuất bản&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Chỉnh sửa&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-files fs-5&quot;&gt;&lt;/i&gt; Tạo một bản sao&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Đổi tên&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;hr class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-trash3 fs-5&quot;&gt;&lt;/i&gt; Xoá&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-body p-3 flex-grow-1 position-relative z-1&quot;&gt;
+                        &lt;ul class=&quot;list-unstyled m-0 d-flex flex-column gap-1&quot;&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Tạo khách hàng tiềm năng&lt;/span&gt;&lt;/li&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Tăng doanh số&lt;/span&gt;&lt;/li&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Tìm hiểu lưu lượng truy cập web...&lt;/span&gt;&lt;/li&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Xem mức độ tương tác và tỷ lệ giữ...&lt;/span&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-footer p-3 pt-0 border-0 bg-white position-relative z-1&quot;&gt;
+                        &lt;i class=&quot;bi bi-building text-secondary fs-5&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;collection-card content-card flex-shrink-0 d-flex flex-column bg-white&quot;&gt;
+                    &lt;div class=&quot;card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2&quot;&gt;
+                        &lt;div class=&quot;header-left flex-grow-1&quot; style=&quot;min-width: 0;&quot;&gt;
+                            &lt;h3 class=&quot;card-title text-truncate&quot; title=&quot;Người dùng&quot;&gt;Người dùng&lt;/h3&gt;
+                            &lt;div class=&quot;d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden&quot;&gt;
+                                &lt;span class=&quot;badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0&quot; style=&quot;font-size: 11px;&quot;&gt;
+                                    &lt;i class=&quot;bi bi-eye&quot;&gt;&lt;/i&gt; Đã xuất bản cho tất cả
+                                &lt;/span&gt;
+                                &lt;span class=&quot;text-muted flex-shrink-0&quot; style=&quot;font-size: 10px;&quot;&gt;•&lt;/span&gt;
+                                &lt;span class=&quot;text-secondary text-truncate flex-grow-1&quot; style=&quot;font-size: 12px;&quot;&gt;Người dù...&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3&quot;&gt;
+                            &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot;&gt;&lt;i class=&quot;bi bi-info-circle&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;div class=&quot;dropdown&quot;&gt;
+                                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot; data-bs-offset=&quot;0,5&quot;&gt;
+                                    &lt;i class=&quot;bi bi-three-dots-vertical&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;ul class=&quot;dropdown-menu shadow-sm custom-dropdown&quot;&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-eye-slash fs-5&quot;&gt;&lt;/i&gt; Huỷ xuất bản&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Chỉnh sửa&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-files fs-5&quot;&gt;&lt;/i&gt; Tạo một bản sao&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Đổi tên&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;hr class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-trash3 fs-5&quot;&gt;&lt;/i&gt; Xoá&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-body p-3 flex-grow-1 position-relative z-1&quot;&gt;
+                        &lt;ul class=&quot;list-unstyled m-0 d-flex flex-column gap-1&quot;&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Thuộc tính người dùng&lt;/span&gt;&lt;/li&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Công nghệ&lt;/span&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-footer p-3 pt-0 border-0 bg-white position-relative z-1&quot;&gt;
+                        &lt;i class=&quot;bi bi-building text-secondary fs-5&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;collection-card content-card flex-shrink-0 d-flex flex-column bg-white&quot;&gt;
+                    &lt;div class=&quot;card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2&quot;&gt;
+                        &lt;div class=&quot;header-left flex-grow-1&quot; style=&quot;min-width: 0;&quot;&gt;
+                            &lt;h3 class=&quot;card-title text-truncate&quot; title=&quot;Nhập dữ liệu&quot;&gt;Nhập dữ liệu&lt;/h3&gt;
+                            &lt;div class=&quot;d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden&quot;&gt;
+                                &lt;span class=&quot;badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0&quot; style=&quot;font-size: 11px;&quot;&gt;
+                                    &lt;i class=&quot;bi bi-eye&quot;&gt;&lt;/i&gt; Đã xuất bản cho tất cả
+                                &lt;/span&gt;
+                                &lt;span class=&quot;text-muted flex-shrink-0&quot; style=&quot;font-size: 10px;&quot;&gt;•&lt;/span&gt;
+                                &lt;span class=&quot;text-secondary text-truncate flex-grow-1&quot; style=&quot;font-size: 12px;&quot;&gt;Nhập dữ ...&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3&quot;&gt;
+                            &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot;&gt;&lt;i class=&quot;bi bi-info-circle&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;div class=&quot;dropdown&quot;&gt;
+                                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot; data-bs-offset=&quot;0,5&quot;&gt;
+                                    &lt;i class=&quot;bi bi-three-dots-vertical&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;ul class=&quot;dropdown-menu shadow-sm custom-dropdown&quot;&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-eye-slash fs-5&quot;&gt;&lt;/i&gt; Huỷ xuất bản&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Chỉnh sửa&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-files fs-5&quot;&gt;&lt;/i&gt; Tạo một bản sao&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Đổi tên&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;hr class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-trash3 fs-5&quot;&gt;&lt;/i&gt; Xoá&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-body p-3 flex-grow-1 position-relative z-1&quot;&gt;
+                        &lt;ul class=&quot;list-unstyled m-0 d-flex flex-column gap-1&quot;&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Xác thực việc nhập dữ liệu chiến dịch&lt;/span&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-footer p-3 pt-0 border-0 bg-white position-relative z-1&quot;&gt;
+                        &lt;i class=&quot;bi bi-building text-secondary fs-5&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;collection-card content-card flex-shrink-0 d-flex flex-column bg-white&quot;&gt;
+                    &lt;div class=&quot;card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2&quot;&gt;
+                        &lt;div class=&quot;header-left flex-grow-1&quot; style=&quot;min-width: 0;&quot;&gt;
+                            &lt;h3 class=&quot;card-title text-truncate&quot; title=&quot;Tập hợp báo cáo không có...&quot;&gt;Tập hợp báo cáo không có...&lt;/h3&gt;
+                            &lt;div class=&quot;d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden&quot;&gt;
+                                &lt;span class=&quot;badge bg-light text-secondary border rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0&quot; style=&quot;font-size: 11px;&quot;&gt;
+                                    &lt;i class=&quot;bi bi-eye-slash&quot;&gt;&lt;/i&gt; Chưa được xuất bản
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3&quot;&gt;
+                            &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot;&gt;&lt;i class=&quot;bi bi-info-circle&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;div class=&quot;dropdown&quot;&gt;
+                                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot; data-bs-offset=&quot;0,5&quot;&gt;
+                                    &lt;i class=&quot;bi bi-three-dots-vertical&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;ul class=&quot;dropdown-menu shadow-sm custom-dropdown&quot;&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-eye fs-5&quot;&gt;&lt;/i&gt; Xuất bản&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Chỉnh sửa&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-files fs-5&quot;&gt;&lt;/i&gt; Tạo một bản sao&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Đổi tên&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;hr class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-trash3 fs-5&quot;&gt;&lt;/i&gt; Xoá&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-body p-3 flex-grow-1 position-relative z-1&quot;&gt;
+                        &lt;ul class=&quot;list-unstyled m-0 d-flex flex-column gap-1&quot;&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;test&lt;/span&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div class=&quot;collection-card content-card flex-shrink-0 d-flex flex-column bg-white&quot;&gt;
+                    &lt;div class=&quot;card-header p-3 pb-2 d-flex justify-content-between align-items-start border-bottom gap-2&quot;&gt;
+                        &lt;div class=&quot;header-left flex-grow-1&quot; style=&quot;min-width: 0;&quot;&gt;
+                            &lt;h3 class=&quot;card-title text-truncate&quot; title=&quot;Vòng đời&quot;&gt;Vòng đời&lt;/h3&gt;
+                            &lt;div class=&quot;d-flex align-items-center gap-1 mt-1 text-nowrap overflow-hidden&quot;&gt;
+                                &lt;span class=&quot;badge bg-success-subtle text-success border border-success-subtle rounded-pill fw-medium d-flex align-items-center gap-1 flex-shrink-0&quot; style=&quot;font-size: 11px;&quot;&gt;
+                                    &lt;i class=&quot;bi bi-eye&quot;&gt;&lt;/i&gt; Đã xuất bản cho tất cả
+                                &lt;/span&gt;
+                                &lt;span class=&quot;text-muted flex-shrink-0&quot; style=&quot;font-size: 10px;&quot;&gt;•&lt;/span&gt;
+                                &lt;span class=&quot;text-secondary text-truncate flex-grow-1&quot; style=&quot;font-size: 12px;&quot;&gt;Vòng đời&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;header-right flex-shrink-0 d-flex gap-1 align-items-start position-relative z-3&quot;&gt;
+                            &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot;&gt;&lt;i class=&quot;bi bi-info-circle&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                            &lt;div class=&quot;dropdown&quot;&gt;
+                                &lt;button class=&quot;btn btn-sm btn-icon text-secondary&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot; data-bs-offset=&quot;0,5&quot;&gt;
+                                    &lt;i class=&quot;bi bi-three-dots-vertical&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;ul class=&quot;dropdown-menu shadow-sm custom-dropdown&quot;&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-eye-slash fs-5&quot;&gt;&lt;/i&gt; Huỷ xuất bản&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Chỉnh sửa&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-files fs-5&quot;&gt;&lt;/i&gt; Tạo một bản sao&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-pencil fs-5&quot;&gt;&lt;/i&gt; Đổi tên&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;hr class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a class=&quot;dropdown-item d-flex align-items-center gap-3&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;bi bi-trash3 fs-5&quot;&gt;&lt;/i&gt; Xoá&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-body p-3 flex-grow-1 position-relative z-1&quot;&gt;
+                        &lt;ul class=&quot;list-unstyled m-0 d-flex flex-column gap-1&quot;&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Thu nạp&lt;/span&gt;&lt;/li&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Mức độ tương tác&lt;/span&gt;&lt;/li&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Kiếm tiền&lt;/span&gt;&lt;/li&gt;
+                            &lt;li class=&quot;d-flex align-items-start gap-2 text-dark&quot;&gt;&lt;i class=&quot;bi bi-folder2 text-secondary&quot;&gt;&lt;/i&gt; &lt;span class=&quot;text-truncate&quot; style=&quot;font-size: 13px;&quot;&gt;Tỷ lệ giữ chân&lt;/span&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;card-footer p-3 pt-0 border-0 bg-white position-relative z-1&quot;&gt;
+                        &lt;i class=&quot;bi bi-building text-secondary fs-5&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;button class=&quot;nav-btn next-btn shadow-sm&quot; id=&quot;nextBtn&quot;&gt;
+            &lt;i class=&quot;bi bi-chevron-right&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;carousel1.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-info fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-css fs-5"></i> NỘI DUNG CSS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-css-carousel1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy CSS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-css-carousel1">body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.max-w-1200 {
+    max-width: 1200px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.carousel-track-container {
+    overflow: visible;
+    width: 100%;
+    clip-path: inset(-50px -50px -50px -50px);
+}
+
+.carousel-track {
+    transition: transform 0.4s ease-in-out;
+}
+
+.collection-card {
+    width: 280px;
+    height: 250px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
+    position: relative;
+}
+
+.collection-card:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.create-card {
+    background-color: #ffffff;
+}
+
+.plus-icon-wrapper {
+    position: relative;
+    width: 36px;
+    height: 36px;
+}
+
+.plus-line {
+    position: absolute;
+    border-radius: 2px;
+}
+
+.plus-line.vertical {
+    width: 4px; height: 16px; top: 0; left: 16px;
+}
+
+.plus-line.vertical-bottom {
+    width: 4px; height: 16px; bottom: 0; left: 16px;
+}
+
+.plus-line.horizontal {
+    width: 16px; height: 4px; top: 16px; left: 0;
+}
+
+.plus-line.horizontal-right {
+    width: 16px; height: 4px; top: 16px; right: 0;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #202124;
+    margin: 0;
+    max-width: 100%;
+}
+
+.btn-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.btn-icon:hover, .btn-icon[aria-expanded=&quot;true&quot;] {
+    background-color: #f1f3f4;
+}
+
+.custom-dropdown {
+    min-width: 240px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin-top: 4px !important;
+    z-index: 1050 !important;
+}
+
+.custom-dropdown .dropdown-item {
+    padding: 10px 24px;
+    font-size: 14px;
+    color: #202124;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: #f1f3f4;
+}
+
+.custom-dropdown .dropdown-item i {
+    color: #5f6368;
+}
+
+.dropdown-divider {
+    border-top: 1px solid #e0e0e0;
+    margin: 4px 0;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f6368;
+    z-index: 100;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: #f8f9fa;
+    color: #202124;
+}
+
+.nav-btn:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.prev-btn {
+    left: -20px;
+}
+
+.next-btn {
+    right: -20px;
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="code-card mb-4">
+                                <div class="code-header py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="text-warning fw-bold small d-flex align-items-center gap-2">
+                                        <i class="bi bi-filetype-js fs-5"></i> NỘI DUNG JS
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-light copy-btn" onclick="copyCode('code-js-carousel1', this)">
+                                        <i class="bi bi-clipboard me-1"></i> Copy JS
+                                    </button>
+                                </div>
+                                <div class="p-0">
+                                    <pre class="text-light m-0 p-3 code-pre"><code id="code-js-carousel1">document.addEventListener(&#039;DOMContentLoaded&#039;, () =&gt; {
+    const track = document.getElementById(&#039;carouselTrack&#039;);
+    const prevBtn = document.getElementById(&#039;prevBtn&#039;);
+    const nextBtn = document.getElementById(&#039;nextBtn&#039;);
+    
+    const cardWidth = 296; 
+    let currentPosition = 0;
+
+    const updateButtons = () =&gt; {
+        const containerWidth = document.getElementById(&#039;trackContainer&#039;).offsetWidth;
+        const trackWidth = track.scrollWidth;
+
+        if (currentPosition === 0) {
+            prevBtn.disabled = true;
+        } else {
+            prevBtn.disabled = false;
+        }
+
+        if (Math.abs(currentPosition) + containerWidth &gt;= trackWidth) {
+            nextBtn.disabled = true;
+        } else {
+            nextBtn.disabled = false;
+        }
+    };
+
+    nextBtn.addEventListener(&#039;click&#039;, () =&gt; {
+        const containerWidth = document.getElementById(&#039;trackContainer&#039;).offsetWidth;
+        const maxScroll = (track.scrollWidth - containerWidth) * -1;
+        
+        currentPosition -= cardWidth;
+        
+        if (currentPosition &lt; maxScroll) {
+            currentPosition = maxScroll;
+        }
+
+        track.style.transform = `translateX(${currentPosition}px)`;
+        updateButtons();
+    });
+
+    prevBtn.addEventListener(&#039;click&#039;, () =&gt; {
+        currentPosition += cardWidth;
+        
+        if (currentPosition &gt; 0) {
+            currentPosition = 0;
+        }
+
+        track.style.transform = `translateX(${currentPosition}px)`;
+        updateButtons();
+    });
+
+    window.addEventListener(&#039;resize&#039;, updateButtons);
+    
+    setTimeout(updateButtons, 100);
+});</code></pre>
+                                </div>
+                            </div>
+                        </section>
                     </div>
 
                 </div>
@@ -3172,6 +4719,8 @@
     <script src="sidebar1.js"></script>
     <script src="popover1.js"></script>
     <script src="offcanvas2.js"></script>
+    <script src="offcanvas3.js"></script>
+    <script src="carousel1.js"></script>
 </body>
 
 </html>
